@@ -1,6 +1,8 @@
 package model;
 
 public class Form {
-    String formType;
+    String studentID;
     String description;
+    
+    
 }

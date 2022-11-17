@@ -21,7 +21,7 @@ public class HallManager extends Staffs {
 
     public static void forwardComplaintForm(Form form) {
         if (reviseComplaintForm(form)) {
-            AssistantWardenMaintenence.receive(form);
+            AssistantWardenMaintenance.receive(form);
         }
     }
 

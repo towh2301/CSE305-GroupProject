@@ -26,5 +26,11 @@ public class Students extends People{
         this.seniority = seniority;
     }
     
+    public void sendMessForm(Form form) {
+        GeneralSecretaryMess.receiveComplaintForm(form);
+    }
     
+    public void sendMaintenanceForm(Form form) {
+        HallManager.receiveComplaintForm(form);
+    }
 }

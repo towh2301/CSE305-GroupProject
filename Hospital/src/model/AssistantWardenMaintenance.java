@@ -2,14 +2,14 @@ package model;
 
 import java.util.*;
 
-public class AssistantWardenMaintenence {
+public class AssistantWardenMaintenance {
     static List<Form> listForm; 
     
     public static void receive(Form form){
-        AssistantWardenMaintenence.listForm.add(form);
+        AssistantWardenMaintenance.listForm.add(form);
     }
     
     public static void addressTheProblem(Form form){
-        AssistantWardenMaintenence.listForm.remove(form);
+        AssistantWardenMaintenance.listForm.remove(form);
     }
 }
