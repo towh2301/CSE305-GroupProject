@@ -113,14 +113,21 @@ public class LoginForm extends javax.swing.JFrame {
         String username = this.userNameTextField.getText();
         String password = this.passwordField.getText();
 
-        if (AccountMap.getAccountMap().containsKey(username) && AccountMap.getAccountMap().get(username).equals(password)) {
+        if (AccountMap.getStaffAccountMap().containsKey(username) && AccountMap.getStaffAccountMap().get(username).equals(password)) {
             JOptionPane.showMessageDialog(this, "Login Successfully");
             this.setVisible(false);
             //new StudentTable().setVisible(true);            
         } else {
-            JOptionPane.showMessageDialog(rootPane, "Pleas enter correct username and password!",
-                    "Error", JOptionPane.ERROR_MESSAGE);
+            if (AccountMap.getStudentAccountMap().containsKey(username) && AccountMap.getStudentAccountMap().get(username).equals(password)) {
+                JOptionPane.showMessageDialog(this, "Login Successfully");
+                this.setVisible(false);
+                new StudentHomePage().setVisible(true);            
+            } else {
+                JOptionPane.showMessageDialog(rootPane, "Pleas enter correct username and password!",
+                        "Error", JOptionPane.ERROR_MESSAGE);
+            }
         }
+
     }//GEN-LAST:event_loginButtonActionPerformed
 
     /**
