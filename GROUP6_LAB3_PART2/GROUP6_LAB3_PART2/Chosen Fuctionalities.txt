@@ -1,0 +1,4 @@
+Chosen fuctionalities to implement related parts of class diagram:
+- Function 2.3: Submit a Complaint Related to Maintenance
+- Function 2.4: Submit a Complaint Related to Mess
+(according to the Project Description document)
