@@ -1,19 +1,19 @@
 package model;
 
 public class Room {
-    int roomId, roomType;
+    int capacity, roomType;
     
     public Room(int roomId, int roomType) {
-        this.roomId = roomId;
+        this.capacity = roomId;
         this.roomType = roomType;
     }
 
-    public int getRoomId() {
-        return roomId;
+    public int getCapacity() {
+        return capacity;
     }
 
-    public void setRoomId(int roomId) {
-        this.roomId = roomId;
+    public void setCapacity(int capacity) {
+        this.capacity = capacity;
     }
 
     public int getRoomType() {

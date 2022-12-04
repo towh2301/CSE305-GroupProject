@@ -17,8 +17,6 @@ public class RoomInfor {
         setGroup4Room();
     }
 
-    
-
     public static HashMap<String, Integer> getTwoRoom() {
         return twoRoom;
     }
