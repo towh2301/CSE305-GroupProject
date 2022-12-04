@@ -224,7 +224,7 @@ public class CreateStudentAccount extends javax.swing.JFrame {
         String gender = (String) this.genderComboBox.getSelectedItem();
         String email = this.emailTextField.getText();
         String major = (String) this.majorComboBox.getSelectedItem();
-        int seniority = Integer.parseInt(this.seniorityTextField.getText());
+        
         String room = this.roomTextField.getText();
 
         //create new student with information
@@ -233,6 +233,7 @@ public class CreateStudentAccount extends javax.swing.JFrame {
                     "Error", JOptionPane.ERROR_MESSAGE);
         } else {
             try {
+                int seniority = Integer.parseInt(this.seniorityTextField.getText());
                 Student student = new Student(id, firstName, surName, dob, gender, email, major, seniority, room);
                 MapStaffAndStudent.mapStudentAccount.put(id, student);
             } catch (NumberFormatException ex) {

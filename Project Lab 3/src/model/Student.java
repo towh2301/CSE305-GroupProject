@@ -39,10 +39,10 @@ public class Student extends People{
     }
     
     public void sendMessForm(Form form) {
-        GeneralSecretary.receiveComplaintForm(form);
+        GeneralSecretary.receiveFormMess(form);
     }
     
     public void sendMaintenanceForm(Form form) {
-        HallManager.receiveComplaintForm(form);
+        GeneralSecretary.receiveFormMaintenance(form);
     }
 }

@@ -2,6 +2,7 @@ package staff_view;
 
 import java.util.HashMap;
 import javax.swing.JOptionPane;
+import static model.MapStaffAndStudent.mapStaffAccount;
 import model.Staff;
 
 /**
@@ -10,10 +11,10 @@ import model.Staff;
  */
 public class CreateStaffAccount extends javax.swing.JFrame {
 
-    public static HashMap<String, Staff> mapStaffAccount;
+    
 
     public CreateStaffAccount() {
-        mapStaffAccount = new HashMap<>();
+        //mapStaffAccount = new HashMap<>();
         this.setResizable(false);
         this.setLocationRelativeTo(null);
         initComponents();

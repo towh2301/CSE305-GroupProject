@@ -40,11 +40,11 @@ public class RoomStatus extends javax.swing.JFrame {
             int statusC = 0;
             //create room name;
             
-            int idx = i + 1;
+//            int idx = i + 1;
             
-            String a = "A" + idx;
-            String b = "B" + idx;
-            String c = "C" + idx;
+            String a = "A" + i;
+            String b = "B" + i;
+            String c = "C" + i;
 
             if (!(RoomInfor.getSingleRoom().get(a) == 0)) {
                 statusA = RoomInfor.getSingleRoom().get(a);
@@ -125,18 +125,12 @@ public class RoomStatus extends javax.swing.JFrame {
 
     private void chooseRoomMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chooseRoomMenuItemActionPerformed
         int collumn = roomStatusTable.getSelectedColumn();
-        int tempRow = roomStatusTable.getSelectedRow();   
-        int row = tempRow - 1;
+        int row = roomStatusTable.getSelectedRow();   
         if (collumn == 0) {
             if (RoomInfor.getSingleRoom().get("A" + row) == 1) {
                 showError();
             } else {
-//                int numOfStudent = RoomInfor.getSingleRoom().get("A" + row) + 1;
-//                RoomInfor.getSingleRoom().replace("A" + row, numOfStudent);
-               // addToRoomStatus(RoomInfor.getSingleRoom(), "A" + row, 1);
-                row += 1;
-                CreateStudentAccount.roomTextField.setText("A" + row);
-                
+                CreateStudentAccount.roomTextField.setText("A" + row);              
             }
         }
 
@@ -144,11 +138,7 @@ public class RoomStatus extends javax.swing.JFrame {
             if (RoomInfor.getTwoRoom().get("B" + row) == 2) {
                 showError();
             } else {
-//                int numOfStudent = RoomInfor.getTwoRoom().get("B" + row) + 1;
-//                RoomInfor.getTwoRoom().replace("B" + row, numOfStudent);
-                //addToRoomStatus(RoomInfor.getTwoRoom(), "B" + row, 1);
-                CreateStudentAccount.roomTextField.setText("B" + row);
-                
+                CreateStudentAccount.roomTextField.setText("B" + row);             
             }
         }
 
@@ -156,11 +146,7 @@ public class RoomStatus extends javax.swing.JFrame {
             if (RoomInfor.getFourRoom().get("C" + row) == 4) {
                 showError();
             } else {
-//                int numOfStudent = RoomInfor.getFourRoom().get("C" + row) + 1;
-//                RoomInfor.getFourRoom().replace("C" + row, numOfStudent);
-               // addToRoomStatus(RoomInfor.getFourRoom(), "C" + row, 1);
-                CreateStudentAccount.roomTextField.setText("C" + row);
-                
+                CreateStudentAccount.roomTextField.setText("C" + row);             
             }
         }
 

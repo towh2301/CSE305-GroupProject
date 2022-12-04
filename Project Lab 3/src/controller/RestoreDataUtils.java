@@ -88,7 +88,38 @@ public class RestoreDataUtils {
                 CreateStaffAccount account = new CreateStaffAccount();
                 Staff staff = new Staff(id, firstName, surName,
                         dob, gender, email);
-                CreateStaffAccount.mapStaffAccount.put(id, staff);//add to hashMap
+                MapStaffAndStudent.mapStaffAccount.put(id, staff);//add to hashMap
+            }
+            frd.close();
+        } catch (FileNotFoundException ex) {
+            //Logger.getLogger(RestoreDataUtils.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (NumberFormatException | IOException ex) {
+            //Logger.getLogger(RestoreDataUtils.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    public static void restoreFormData(File file) {
+        FileReader frd;
+        try {
+            frd = new FileReader(file);
+            BufferedReader brd = new BufferedReader(frd);
+            int numForm = Integer.parseInt(brd.readLine());
+
+            for (; numForm > 0; numForm--) {
+                ?
+                //variables getter
+                String id = brd.readLine();
+                String firstName = brd.readLine();
+                String surName = brd.readLine();
+                String dob = brd.readLine();
+                String gender = brd.readLine();
+                String email = brd.readLine();
+
+                //add infor
+                CreateStaffAccount account = new CreateStaffAccount();
+                Staff staff = new Staff(id, firstName, surName,
+                        dob, gender, email);
+                MapStaffAndStudent.mapStaffAccount.put(id, staff);//add to hashMap
             }
             frd.close();
         } catch (FileNotFoundException ex) {

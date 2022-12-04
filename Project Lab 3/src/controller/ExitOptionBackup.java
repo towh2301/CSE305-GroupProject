@@ -4,8 +4,9 @@ import java.awt.Frame;
 import java.io.File;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import static model.MapStaffAndStudent.mapStaffAccount;
 import static model.MapStaffAndStudent.mapStudentAccount;
-import static staff_view.CreateStaffAccount.mapStaffAccount;
+
 
 
 public class ExitOptionBackup {

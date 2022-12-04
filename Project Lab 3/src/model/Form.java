@@ -12,9 +12,7 @@ public class Form {
     public Form(String studentID, String description) {
         this.studentID = studentID;
         this.description = description;
-    }
-    
-    
+    } 
 
     public String getStudentID() {
         return studentID;
