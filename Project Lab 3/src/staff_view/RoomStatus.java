@@ -10,7 +10,7 @@ import java.util.HashMap;
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 import javax.swing.table.DefaultTableModel;
-import mess_maintenance_table_controller.RoomInfor;
+import model.Hall;
 
 /**
  *

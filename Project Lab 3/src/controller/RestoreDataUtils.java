@@ -1,6 +1,6 @@
 package controller;
 
-import mess_maintenance_table_controller.RoomInfor;
+import model.RoomInfor;
 import java.io.*;
 import model.MapStaffAndStudent;
 import static model.MapStaffAndStudent.mapStudentAccount;

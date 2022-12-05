@@ -1,26 +1,22 @@
 package model;
 
 public class Room {
-    int roomId, roomType;
+    private int capacity, current;
+
+    public int getCapacity() {
+        return capacity;
+    }
+
+    public void setCapacity(int capacity) {
+        this.capacity = capacity;
+    }
+
+    public int getCurrent() {
+        return current;
+    }
+
+    public void setCurrent(int current) {
+        this.current = current;
+    }
     
-    public Room(int roomId, int roomType) {
-        this.roomId = roomId;
-        this.roomType = roomType;
-    }
-
-    public int getRoomId() {
-        return roomId;
-    }
-
-    public void setRoomId(int roomId) {
-        this.roomId = roomId;
-    }
-
-    public int getRoomType() {
-        return roomType;
-    }
-
-    public void setRoomType(int roomType) {
-        this.roomType = roomType;
-    }
 }

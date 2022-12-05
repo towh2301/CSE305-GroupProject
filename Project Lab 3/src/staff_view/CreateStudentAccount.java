@@ -8,7 +8,7 @@ import java.util.HashMap;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import model.Student;
-import mess_maintenance_table_controller.RoomInfor;
+import model.Hall;
 import model.MapStaffAndStudent;
 import static model.MapStaffAndStudent.mapStudentAccount;
 import static staff_view.RoomStatus.roomStatusTable;
