@@ -1,6 +1,5 @@
 package controller;
 
-import model.RoomInfor;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -49,7 +48,6 @@ public class RestoreDataUtils {
         return result;
     }
     
-    public static 
 
     public static void restoreStaffData(File file) {
         FileReader frd;
@@ -88,7 +86,7 @@ public class RestoreDataUtils {
     }
 
     public static void restoreStudentData(File file) {
-        RoomInfor roomInfor = new RoomInfor();
+        //RoomInfor roomInfor = new RoomInfor();
         FileReader frd;
         try {
             frd = new FileReader(file);
@@ -109,24 +107,9 @@ public class RestoreDataUtils {
                 String room = brd.readLine();
 
                 //add infor
-                String a = String.valueOf(room.charAt(0));
-
-                switch (a) {
-                    case "A" -> {
-                        RoomInfor.getSingleRoom().replace(room, 1);
-                    }
-                    case "B" -> {
-                        int tempStudent = RoomInfor.getTwoRoom().get(room) + 1;
-                        RoomInfor.getTwoRoom().replace(room, tempStudent);
-                    }
-                    case "C" -> {
-                        int tempStudent = RoomInfor.getFourRoom().get(room) + 1;
-                        RoomInfor.getFourRoom().replace(room, tempStudent);
-                    }
-                }
-
                 Student student = new Student(id, firstName, surName,
-                        dob, gender, email, major, seniority, room);
+                     dob, gender, email, major, seniority);
+                student.setRoom(room);
                 MapStaffAndStudent.mapStudentAccount.put(id, student);//add to hashMap
             }
             frd.close();
@@ -137,36 +120,36 @@ public class RestoreDataUtils {
         }
     }
 
-    public static void restoreStaffData(File file) {
-        FileReader frd;
-        try {
-            frd = new FileReader(file);
-            BufferedReader brd = new BufferedReader(frd);
-            int staffNumber = Integer.parseInt(brd.readLine());
-
-            for (; staffNumber > 0; staffNumber--) {
-
-                //variables getter
-                String id = brd.readLine();
-                String firstName = brd.readLine();
-                String surName = brd.readLine();
-                String dob = brd.readLine();
-                String gender = brd.readLine();
-                String email = brd.readLine();
-
-                //add infor
-                CreateStaffAccount account = new CreateStaffAccount();
-                Staff staff = new Staff(id, firstName, surName,
-                        dob, gender, email);
-                MapStaffAndStudent.mapStaffAccount.put(id, staff);//add to hashMap
-            }
-            frd.close();
-        } catch (FileNotFoundException ex) {
-            //Logger.getLogger(RestoreDataUtils.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (NumberFormatException | IOException ex) {
-            //Logger.getLogger(RestoreDataUtils.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
+//    public static void restoreStaffData(File file) {
+//        FileReader frd;
+//        try {
+//            frd = new FileReader(file);
+//            BufferedReader brd = new BufferedReader(frd);
+//            int staffNumber = Integer.parseInt(brd.readLine());
+//
+//            for (; staffNumber > 0; staffNumber--) {
+//
+//                //variables getter
+//                String id = brd.readLine();
+//                String firstName = brd.readLine();
+//                String surName = brd.readLine();
+//                String dob = brd.readLine();
+//                String gender = brd.readLine();
+//                String email = brd.readLine();
+//
+//                //add infor
+//                CreateStaffAccount account = new CreateStaffAccount();
+//                Staff staff = new Staff(id, firstName, surName,
+//                        dob, gender, email);
+//                MapStaffAndStudent.mapStaffAccount.put(id, staff);//add to hashMap
+//            }
+//            frd.close();
+//        } catch (FileNotFoundException ex) {
+//            //Logger.getLogger(RestoreDataUtils.class.getName()).log(Level.SEVERE, null, ex);
+//        } catch (NumberFormatException | IOException ex) {
+//            //Logger.getLogger(RestoreDataUtils.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//    }
 
     public static void restoreFormData(File file) {
         FileReader frd;
