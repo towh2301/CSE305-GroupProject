@@ -51,6 +51,10 @@ public class Hall {
         return gender;
     }
 
+    public void setNumber(int number) {
+        this.number = number;
+    }
+
     public void setNumberOfRoom(int numberOfRoom) {
         this.numberOfRoom = numberOfRoom;
     }

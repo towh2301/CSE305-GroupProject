@@ -19,6 +19,10 @@ public class Administrator {
     public static List<Hall> getListHall() {
         return listHall;
     }
+
+    public static void setListHall(List<Hall> listHall) {
+        Administrator.listHall = listHall;
+    }
     
     
    

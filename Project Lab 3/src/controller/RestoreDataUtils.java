@@ -1,6 +1,8 @@
 package controller;
 
 import java.io.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.ArrayList;
 import java.util.List;
 import model.Hall;
@@ -14,15 +16,16 @@ import view.CreateStudentAccount;
 import view.RoomStatus;
 
 public class RestoreDataUtils {
+    static FileReader frd = null;
 
     public static Hall RestoreHallEach(String fileName) {
-        FileReader frd;
         Hall result = new Hall();
+        result.setNumber(Integer.valueOf(fileName.charAt(fileName.lastIndexOf(".") - 1)));
         try {
             frd = new FileReader(fileName);
             BufferedReader brd = new BufferedReader(frd);
             result.setMajor(brd.readLine());
-            result.setGender(brd.readLine().equals("M") ? "Male" : "Female");
+            result.setGender(brd.readLine());
             int numberOfRoom = Integer.parseInt(brd.readLine());
             result.setNumberOfRoom(numberOfRoom);
             for (int i = 1; i <= numberOfRoom; i++) {
@@ -31,23 +34,20 @@ public class RestoreDataUtils {
             }
             frd.close();
         } catch (FileNotFoundException ex) {
-            //Logger.getLogger(RestoreDataUtils.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(RestoreDataUtils.class.getName()).log(Level.SEVERE, null, ex);
         } catch (NumberFormatException | IOException ex) {
-            //Logger.getLogger(RestoreDataUtils.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(RestoreDataUtils.class.getName()).log(Level.SEVERE, null, ex);
         }
         return result;
     }
-    
+
     public static List<Hall> restoreHallAll() {
-        FileReader frd;
         List<Hall> result = new ArrayList<>();
         for (int i = 1; i <= Administrator.getNumberOfHall(); i++) {
-            result.add(RestoreHallEach("hall"+i+".txt"));
-            result.get(i).setHallName("hall"+i);
+            result.add(RestoreHallEach("hall" + i + ".txt"));
         }
         return result;
     }
-    
 
     public static void restoreStaffData(File file) {
         FileReader frd;

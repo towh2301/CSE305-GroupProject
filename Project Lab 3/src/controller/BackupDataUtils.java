@@ -1,10 +1,14 @@
 package controller;
 
 import java.io.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import model.Form;
+import model.Room;
+import model.Hall;
 import model.MapStaffAndStudent;
 import model.Staff;
 import model.Student;
@@ -12,8 +16,37 @@ import view.CreateStaffAccount;
 import view.CreateStudentAccount;
 
 public class BackupDataUtils {
-    
-    public static void backupHall(Hall )
+
+    static FileWriter fwr;
+
+    public static void backupHallEach(Hall hall, String fileName) {
+        try {
+            fwr = new FileWriter(fileName, false);
+            PrintWriter pwr = new PrintWriter(fwr);
+            pwr.println(hall.getMajor());
+            pwr.println(hall.getGender());
+            List<Room> listRoom = hall.getListRoom();
+            pwr.println(listRoom.size());
+            for (Room room : listRoom) {
+                pwr.println(room.getCapacity());
+            }
+            pwr.flush();
+        } catch (IOException ex) {
+            Logger.getLogger(BackupDataUtils.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            try {
+                fwr.close();
+            } catch (IOException ex) {
+                Logger.getLogger(BackupDataUtils.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }
+
+    public static void backupHallAll(List<Hall> listHall) {
+        for (int i = 1; i <= Administrator.getNumberOfHall(); i++) {
+            backupHallEach(Administrator.getListHall().get(i - 1), "hall" + i + ".txt");
+        }
+    }
 
     public static void backupStudent(Student student, File file) {
         FileWriter fwr = null;
