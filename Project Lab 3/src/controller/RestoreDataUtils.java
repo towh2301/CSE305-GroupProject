@@ -10,9 +10,9 @@ import static model.MapStaffAndStudent.mapStudentAccount;
 import model.Room;
 import model.Staff;
 import model.Student;
-import staff_view.CreateStaffAccount;
-import staff_view.CreateStudentAccount;
-import staff_view.RoomStatus;
+import view.CreateStaffAccount;
+import view.CreateStudentAccount;
+import view.RoomStatus;
 
 public class RestoreDataUtils {
 
@@ -47,6 +47,8 @@ public class RestoreDataUtils {
         }
         return result;
     }
+    
+    public static 
 
     public static void restoreStaffData(File file) {
         FileReader frd;

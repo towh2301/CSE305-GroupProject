@@ -1,8 +1,5 @@
 package model;
 
-import staff_model.HallManager;
-import staff_model.GeneralSecretary;
-
 public class Student extends People{
     String major, room;
     int seniority;

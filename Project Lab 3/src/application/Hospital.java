@@ -4,7 +4,7 @@ import controller.RestoreDataUtils;
 import java.io.File;
 import model.MapStaffAndStudent;
 import view.LoginForm;
-import staff_view.SecretaryHomePage;
+import view.SecretaryHomePage;
 
 public class Hospital {
     
