@@ -25,6 +25,7 @@ public class MVCProject {
         //backup hall
         //nen de vo luc new Admin Page
         BackupDataUtils.backupHallAll(Administrator.getListHall());
+        
         //restore
         File studentFile = new File("student.txt");
         File staffFile = new File("staff.txt");
