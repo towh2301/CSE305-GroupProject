@@ -12,8 +12,6 @@ import model.Hall;
 import model.MapStaffAndStudent;
 import model.Staff;
 import model.Student;
-import view.CreateStaffAccount;
-import view.CreateStudentAccount;
 
 public class BackupDataUtils {
 

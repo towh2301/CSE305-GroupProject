@@ -4,17 +4,13 @@
  */
 package view;
 
-import controller.Administrator;
-import controller.RestoreDataUtils;
-import java.util.HashMap;
+import staff_view.AdministratorForm;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import model.Student;
 import model.Hall;
 import model.MapStaffAndStudent;
-import static model.MapStaffAndStudent.mapStudentAccount;
-import model.Room;
 import static view.RoomStatus.roomStatusTable;
 
 /**
@@ -26,10 +22,11 @@ public class CreateStudentRoom extends javax.swing.JFrame {
     RoomStatus roomStatus = new RoomStatus();
 
     public CreateStudentRoom(Student student, int genderIdx, int majorIdx, String hallName) {
+        initComponents();
         this.setResizable(false);
         this.setLocationRelativeTo(this);
         this.setTextField(student, genderIdx, majorIdx, hallName);
-        initComponents();
+        
     }
 
     /**
@@ -114,11 +111,6 @@ public class CreateStudentRoom extends javax.swing.JFrame {
         hallLabel.setText("Hall:");
 
         hallTextField.setEditable(false);
-        hallTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                hallTextFieldActionPerformed(evt);
-            }
-        });
 
         checkButton.setText("Check");
         checkButton.addActionListener(new java.awt.event.ActionListener() {
@@ -248,10 +240,6 @@ public class CreateStudentRoom extends javax.swing.JFrame {
                               , "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_createStudentButtonActionPerformed
-
-    private void hallTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hallTextFieldActionPerformed
-
-    }//GEN-LAST:event_hallTextFieldActionPerformed
 
     private void checkButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkButtonActionPerformed
         

@@ -11,14 +11,14 @@ import static model.MapStaffAndStudent.mapStudentAccount;
 import model.Room;
 import model.Staff;
 import model.Student;
-import view.CreateStaffAccount;
+import staff_view.CreateStaffAccount;
 import view.CreateStudentAccount;
 import view.RoomStatus;
 
 public class RestoreDataUtils {
     static FileReader frd = null;
 
-    public static Hall RestoreHallEach(String fileName) {
+    public static Hall RestoreHallEach(String fileName, String hallName) {
         Hall result = new Hall();
         result.setNumber(Integer.valueOf(fileName.charAt(fileName.lastIndexOf(".") - 1)));
         try {
@@ -30,6 +30,11 @@ public class RestoreDataUtils {
             result.setNumberOfRoom(numberOfRoom);
             for (int i = 1; i <= numberOfRoom; i++) {
                 Room room = new Room(Integer.parseInt(brd.readLine()));
+                
+                //set room name
+                room.setName(hallName + "." + i);
+                
+                //
                 result.getListRoom().add(room);
             }
             frd.close();
@@ -43,8 +48,11 @@ public class RestoreDataUtils {
 
     public static List<Hall> restoreHallAll() {
         List<Hall> result = new ArrayList<>();
-        for (int i = 1; i <= Administrator.getNumberOfHall(); i++) {
-            result.add(RestoreHallEach("hall" + i + ".txt"));
+        for (int i = 1; i <= Administrator.getNumberOfHall(); i++){
+            
+            //add "H" + i to set hallName
+            result.add(RestoreHallEach("hall" + i + ".txt", "H" + i));
+            result.get(i-1).setHallName("H"+i);
         }
         return result;
     }
@@ -151,35 +159,41 @@ public class RestoreDataUtils {
 //        }
 //    }
 
-    public static void restoreFormData(File file) {
-        FileReader frd;
-        try {
-            frd = new FileReader(file);
-            BufferedReader brd = new BufferedReader(frd);
-            int numForm = Integer.parseInt(brd.readLine());
-
-            for (; numForm > 0; numForm--) {
-
-                
-                        ? //variables getter
-                        String  id = brd.readLine();
-                String firstName = brd.readLine();
-                String surName = brd.readLine();
-                String dob = brd.readLine();
-                String gender = brd.readLine();
-                String email = brd.readLine();
-
-                //add infor
-                CreateStaffAccount account = new CreateStaffAccount();
-                Staff staff = new Staff(id, firstName, surName,
-                        dob, gender, email);
-                MapStaffAndStudent.mapStaffAccount.put(id, staff);//add to hashMap
-            }
-            frd.close();
-        } catch (FileNotFoundException ex) {
-            //Logger.getLogger(RestoreDataUtils.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (NumberFormatException | IOException ex) {
-            //Logger.getLogger(RestoreDataUtils.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
+    
+    
+    
+    
+    
+    
+//    public static void restoreFormData(File file) {
+//        FileReader frd;
+//        try {
+//            frd = new FileReader(file);
+//            BufferedReader brd = new BufferedReader(frd);
+//            int numForm = Integer.parseInt(brd.readLine());
+//
+//            for (; numForm > 0; numForm--) {
+//
+//                
+//                        ? //variables getter
+//                        String  id = brd.readLine();
+//                String firstName = brd.readLine();
+//                String surName = brd.readLine();
+//                String dob = brd.readLine();
+//                String gender = brd.readLine();
+//                String email = brd.readLine();
+//
+//                //add infor
+//                CreateStaffAccount account = new CreateStaffAccount();
+//                Staff staff = new Staff(id, firstName, surName,
+//                        dob, gender, email);
+//                MapStaffAndStudent.mapStaffAccount.put(id, staff);//add to hashMap
+//            }
+//            frd.close();
+//        } catch (FileNotFoundException ex) {
+//            //Logger.getLogger(RestoreDataUtils.class.getName()).log(Level.SEVERE, null, ex);
+//        } catch (NumberFormatException | IOException ex) {
+//            //Logger.getLogger(RestoreDataUtils.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//    }
 }

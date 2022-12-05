@@ -17,7 +17,6 @@ import model.MapStaffAndStudent;
  */
 public class CreateStudentAccount extends javax.swing.JFrame {
 
-
     public CreateStudentAccount() {
         this.setResizable(false);
         this.setLocationRelativeTo(this);
@@ -100,11 +99,6 @@ public class CreateStudentAccount extends javax.swing.JFrame {
         hallLabel.setText("Hall:");
 
         hallTextField.setEditable(false);
-        hallTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                hallTextFieldActionPerformed(evt);
-            }
-        });
 
         checkButton.setText("Check");
         checkButton.addActionListener(new java.awt.event.ActionListener() {
@@ -213,25 +207,13 @@ public class CreateStudentAccount extends javax.swing.JFrame {
 
     private void createStudentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createStudentButtonActionPerformed
         this.addStudentToList();
-        
-        // infor for createRoom
-        int genderIdx = this.genderComboBox.getSelectedIndex();
-        int majorIdx = this.majorComboBox.getSelectedIndex();
-        Student student = MapStaffAndStudent.mapStudentAccount.get(this.idTextField.getText());
-        String hallName = this.hallTextField.getText();
-        
-        //initialize form
-        new CreateStudentRoom(student, genderIdx, majorIdx, hallName).setVisible(true);  
-        this.dispose();
+
+
     }//GEN-LAST:event_createStudentButtonActionPerformed
 
     private void clearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearButtonActionPerformed
         this.clear();
     }//GEN-LAST:event_clearButtonActionPerformed
-
-    private void hallTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hallTextFieldActionPerformed
-
-    }//GEN-LAST:event_hallTextFieldActionPerformed
 
     private void checkButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkButtonActionPerformed
         //RoomInfor roomInfor = new RoomInfor();
@@ -244,13 +226,13 @@ public class CreateStudentAccount extends javax.swing.JFrame {
         } else {
             JOptionPane.showMessageDialog(rootPane, "Data will store!",
                     "Hall is full!", JOptionPane.ERROR_MESSAGE);
-            addStudentToList();
+            //addStudentToList();
             this.clear();
         }
 
     }//GEN-LAST:event_checkButtonActionPerformed
 
-    public void clear(){
+    public void clear() {
         this.idTextField.setText("");
         this.genderComboBox.getItemAt(0);
         this.majorComboBox.getItemAt(0);
@@ -261,22 +243,20 @@ public class CreateStudentAccount extends javax.swing.JFrame {
         this.hallTextField.setText("");
         this.seniorityTextField.setText("");
     }
-    
+
     public void addStudentToList() {
         //get value of textfield
         String id = this.idTextField.getText();
         String firstName = this.lastNameTextField.getText();
         String surName = this.surNameTextField.getText();
         String dob = this.dobTextField.getText();
-        
+
         String gender = (String) this.genderComboBox.getSelectedItem();
-        
-        
+
         String major = (String) this.majorComboBox.getSelectedItem();
-        
-        
+
         String email = this.emailTextField.getText();
-        
+
         String hallName = this.hallTextField.getText();
 
         //create new student with information
@@ -285,18 +265,30 @@ public class CreateStudentAccount extends javax.swing.JFrame {
                     "Error", JOptionPane.ERROR_MESSAGE);
         } else {
             try {
-                
+
                 int seniority = Integer.parseInt(this.seniorityTextField.getText());
                 Student student = new Student(id, firstName, surName, dob, gender, email, major, seniority);
                 MapStaffAndStudent.mapStudentAccount.put(id, student);
                 
+                if (hallName.isBlank()) {
+                    JOptionPane.showMessageDialog(rootPane, "Data will be stored!");
+                    this.clear();
+                } else {
+                    // infor for createRoom
+                    int genderIdx = this.genderComboBox.getSelectedIndex();
+                    int majorIdx = this.majorComboBox.getSelectedIndex();
+
+                    //initialize form
+                    new CreateStudentRoom(student, genderIdx, majorIdx, hallName).setVisible(true);
+                    this.dispose();
+                }
+
             } catch (NumberFormatException ex) {
                 JOptionPane.showMessageDialog(this, "Wrong number format!",
                         "Error", JOptionPane.ERROR_MESSAGE);
             }
         }
-        
-        
+
     }
 
     /**

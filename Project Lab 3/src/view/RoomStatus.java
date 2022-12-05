@@ -112,7 +112,7 @@ public class RoomStatus extends javax.swing.JFrame {
 
     private void chooseRoomMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chooseRoomMenuItemActionPerformed
        int row = roomStatusTable.getSelectedRow();
-       String roomName = String.valueOf(roomStatusTable.getValueAt(row, 1));
+       String roomName = String.valueOf(roomStatusTable.getValueAt(row, 0));
        CreateStudentRoom.roomTextField.setText(roomName);
     }//GEN-LAST:event_chooseRoomMenuItemActionPerformed
 

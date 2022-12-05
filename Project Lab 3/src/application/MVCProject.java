@@ -6,7 +6,7 @@ import controller.RestoreDataUtils;
 import java.io.File;
 import model.MapStaffAndStudent;
 import view.LoginForm;
-import view.SecretaryHomePage;
+import staff_view.SecretaryHomePage;
 
 public class MVCProject {
     
