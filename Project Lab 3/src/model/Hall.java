@@ -3,7 +3,7 @@ package model;
 import java.util.*;
 
 public class Hall {
-    private byte number, numberOfRoom;
+    private int number, numberOfRoom;
     private String major, gender;
     private List<Room> listRoom;
     private boolean isSelfCatering, isGuestRoomAvail;
@@ -12,6 +12,7 @@ public class Hall {
 //    private static HashMap<String, Integer> fourRoom;
 
     public Hall() {
+        this.listRoom = new ArrayList<>();
     }
     
     public Hall(byte number, byte numberOfRoom, String major, String gender, 
@@ -24,6 +25,12 @@ public class Hall {
         this.isGuestRoomAvail = isGuestRoomAvail;
     }
 
+    public List<Room> getListRoom() {
+        return listRoom;
+    }
+    
+    
+
     public Hall(List<Room> listRoom) {
         this.listRoom = listRoom;
     }
@@ -34,6 +41,18 @@ public class Hall {
 
     public String getGender() {
         return gender;
+    }
+
+    public void setNumberOfRoom(int numberOfRoom) {
+        this.numberOfRoom = numberOfRoom;
+    }
+
+    public void setMajor(String major) {
+        this.major = major;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
     }
     
     public List<Room> findVacantRoom() {

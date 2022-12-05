@@ -3,6 +3,11 @@ package model;
 public class Room {
     private int capacity, current;
     String name;
+    
+    public Room(int capacity) {
+        this.capacity = capacity;
+        this.current = 0;
+    }
 
     public String getName() {
         return name;
