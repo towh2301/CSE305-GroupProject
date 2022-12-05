@@ -20,7 +20,7 @@ public class RestoreDataUtils {
         FileReader frd;
         Hall result = new Hall();
         try {
-            frd = new FileReader(file);
+            frd = new FileReader(fileName);
             BufferedReader brd = new BufferedReader(frd);
             result.setMajor(brd.readLine());
             result.setGender(brd.readLine().equals("M") ? "Male" : "Female");
