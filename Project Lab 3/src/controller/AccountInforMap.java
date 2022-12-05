@@ -2,7 +2,7 @@ package controller;
 
 import java.util.*;
 import static model.MapStaffAndStudent.mapStudentAccount;
-import staff_view.CreateStudentAccount;
+import view.CreateStudentAccount;
 
 public class AccountInforMap {
 

@@ -4,7 +4,6 @@
  */
 package view;
 
-import staff_view.SecretaryHomePage;
 import controller.AccountInforMap;
 import javax.swing.JOptionPane;
 

@@ -1,17 +1,13 @@
 package model;
 
-import staff_model.HallManager;
-import staff_model.GeneralSecretary;
-
 public class Student extends People{
     String major, room;
     int seniority;
     
-    public Student(String id, String firstName, String surName, String dateOfBirth, String gender, String email, String major, int seniority, String room) {
+    public Student(String id, String firstName, String surName, String dateOfBirth, String gender, String email, String major, int seniority) {
         super(id, firstName, surName, dateOfBirth, gender, email);
         this.major = major;
         this.seniority = seniority;
-        this.room = room;
     }
     
     public void setRoom(String room){
