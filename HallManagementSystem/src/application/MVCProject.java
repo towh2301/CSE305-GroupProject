@@ -18,10 +18,13 @@ public class MVCProject {
         //initialize staff
         new SecretaryHomePage();
         new MapStaffAndStudent();
-        //restore hall
+        
+        //restore all hall
+        //nen de vo luc new Admin Page
         Administrator.setListHall(RestoreDataUtils.restoreHallAll());
 
         //backup hall
+        //nen de vo luc new Admin Page
         BackupDataUtils.backupHallAll(Administrator.getListHall());
 
         //restore

@@ -5,7 +5,7 @@ import java.util.List;
 import model.Hall;
 
 public class Administrator {
-    private static final int numberOfHall = 6;
+    private static int numberOfHall = 6;
     private static List<Hall> listHall;
     private static List<String> bench;
 
