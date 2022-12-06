@@ -127,6 +127,27 @@ public class RestoreDataUtils {
             //Logger.getLogger(RestoreDataUtils.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    
+    public static void restoreHallInfor(File file) {
+        FileReader frd;
+        try {
+            frd = new FileReader(file);
+            BufferedReader brd = new BufferedReader(frd);
+            
+            /*initialize code
+            
+            ...
+
+            */
+
+
+            frd.close();
+        } catch (FileNotFoundException ex) {
+            //Logger.getLogger(RestoreDataUtils.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (NumberFormatException | IOException ex) {
+            //Logger.getLogger(RestoreDataUtils.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 
 //    public static void restoreStaffData(File file) {
 //        FileReader frd;

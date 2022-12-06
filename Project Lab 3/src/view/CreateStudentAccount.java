@@ -9,6 +9,7 @@ import java.util.List;
 import javax.swing.JOptionPane;
 import model.Student;
 import model.Hall;
+import model.HallManager;
 import model.MapStaffAndStudent;
 
 /**
@@ -207,8 +208,6 @@ public class CreateStudentAccount extends javax.swing.JFrame {
 
     private void createStudentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createStudentButtonActionPerformed
         this.addStudentToList();
-
-
     }//GEN-LAST:event_createStudentButtonActionPerformed
 
     private void clearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearButtonActionPerformed
@@ -224,8 +223,8 @@ public class CreateStudentAccount extends javax.swing.JFrame {
         if (!listHall.isEmpty()) {
             this.hallTextField.setText(listHall.get(0).getHallName());
         } else {
-            JOptionPane.showMessageDialog(rootPane, "Data will store!",
-                    "Hall is full!", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(rootPane, "Hall is full!",
+                    "Error", JOptionPane.ERROR_MESSAGE);
             //addStudentToList();
             this.clear();
         }
@@ -268,24 +267,28 @@ public class CreateStudentAccount extends javax.swing.JFrame {
 
                 int seniority = Integer.parseInt(this.seniorityTextField.getText());
                 Student student = new Student(id, firstName, surName, dob, gender, email, major, seniority);
+                student.setGenderIdx(this.genderComboBox.getSelectedIndex());
+                student.setMajorIdx(this.majorComboBox.getSelectedIndex());
                 MapStaffAndStudent.mapStudentAccount.put(id, student);
-                
+
                 if (hallName.isBlank()) {
-                    JOptionPane.showMessageDialog(rootPane, "Data will be stored!");
                     this.clear();
                 } else {
                     // infor for createRoom
                     int genderIdx = this.genderComboBox.getSelectedIndex();
                     int majorIdx = this.majorComboBox.getSelectedIndex();
 
-                    //initialize form
-                    new CreateStudentRoom(student, genderIdx, majorIdx, hallName).setVisible(true);
-                    this.dispose();
+                    //add to bench in HallManager class
+                    HallManager.addToBench(id, hallName);
+
                 }
 
             } catch (NumberFormatException ex) {
                 JOptionPane.showMessageDialog(this, "Wrong number format!",
                         "Error", JOptionPane.ERROR_MESSAGE);
+            } finally {
+                JOptionPane.showMessageDialog(rootPane, "Data will be stored!");
+                this.dispose();
             }
         }
 

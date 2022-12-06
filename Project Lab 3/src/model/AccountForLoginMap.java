@@ -13,6 +13,12 @@ public class AccountForLoginMap {
         loginStaffMap.put("Cadmin", "admin");
         loginStaffMap.put("Madmin", "admin");
         loginStaffMap.put("Aadmin", "admin");
+        loginStaffMap.put("Hall1", "admin");
+        loginStaffMap.put("Hall2", "admin");
+        loginStaffMap.put("Hall3", "admin");
+        loginStaffMap.put("Hall4", "admin");
+        loginStaffMap.put("Hall5", "admin");
+        loginStaffMap.put("Hall6", "admin");
         loginStudentMap.put("1", "1");
     }
 //   static HashMap<String, Student> mapStaffAccount;

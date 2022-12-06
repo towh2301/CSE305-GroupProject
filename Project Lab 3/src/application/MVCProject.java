@@ -4,6 +4,8 @@ import controller.Administrator;
 import controller.BackupDataUtils;
 import controller.RestoreDataUtils;
 import java.io.File;
+import java.util.HashMap;
+import model.HallManager;
 import model.MapStaffAndStudent;
 import view.LoginForm;
 import staff_view.SecretaryHomePage;
@@ -17,6 +19,7 @@ public class MVCProject {
         //initialize staff
         new SecretaryHomePage();
         new MapStaffAndStudent();
+        HallManager.MapStudentID = new HashMap<>();
         
         //restore all hall
         //nen de vo luc new Admin Page
