@@ -19,7 +19,9 @@ public class MVCProject {
         //initialize staff
         new SecretaryHomePage();
         new MapStaffAndStudent();
-        HallManager.MapStudentID = new HashMap<>();
+        
+        File file = new File("HallForCreateRoom.txt");                
+        RestoreDataUtils.restoreHallInfor(file);
         
         //restore all hall
         //nen de vo luc new Admin Page
