@@ -2,40 +2,26 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package staff_view;
+package view;
 
-import controller.BackupDataUtils;
-import staff_view.RoomStatus;
-import staff_view.AdministratorForm;
+import controller.Administrator;
 import java.util.List;
 import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
-import model.AccountForLoginMap;
 import model.Student;
 import model.Hall;
 import model.HallManager;
 import model.MapStaffAndStudent;
-import model.Room;
-import static staff_view.HallManagerView.studentTable;
-import static staff_view.RoomStatus.roomStatusTable;
 
 /**
  *
  * @author CNTT
  */
-public class CreateStudentRoom extends javax.swing.JFrame {
+public class CreateStudentAccount extends javax.swing.JFrame {
 
-    RoomStatus roomStatus = new RoomStatus();
-    static int rowForList;
-    int row;
-
-    public CreateStudentRoom(Student student, int genderIdx, int majorIdx, String hallName, int row) {
-        initComponents();
+    public CreateStudentAccount() {
         this.setResizable(false);
         this.setLocationRelativeTo(this);
-        this.setTextField(student, genderIdx, majorIdx, hallName);
-        this.row = row;
-
+        initComponents();
     }
 
     /**
@@ -48,6 +34,7 @@ public class CreateStudentRoom extends javax.swing.JFrame {
     private void initComponents() {
 
         createStudentButton = new javax.swing.JButton();
+        clearButton = new javax.swing.JButton();
         createStudentAccountLabel = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         idTextField = new javax.swing.JTextField();
@@ -68,8 +55,6 @@ public class CreateStudentRoom extends javax.swing.JFrame {
         hallLabel = new javax.swing.JLabel();
         hallTextField = new javax.swing.JTextField();
         checkButton = new javax.swing.JButton();
-        roomTextField = new javax.swing.JTextField();
-        roomLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -80,25 +65,24 @@ public class CreateStudentRoom extends javax.swing.JFrame {
             }
         });
 
+        clearButton.setText("Clear");
+        clearButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clearButtonActionPerformed(evt);
+            }
+        });
+
         createStudentAccountLabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         createStudentAccountLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        createStudentAccountLabel.setText("Create Student Room");
+        createStudentAccountLabel.setText("Create Student Account");
 
         jLabel1.setText("ID: ");
 
-        idTextField.setEditable(false);
-
         jLabel2.setText("Sur Name: ");
-
-        surNameTextField.setEditable(false);
 
         jLabel3.setText("Last Name: ");
 
-        lastNameTextField.setEditable(false);
-
         jLabel4.setText("Date Of Birth: ");
-
-        dobTextField.setEditable(false);
 
         jLabel5.setText("Gender: ");
 
@@ -107,15 +91,11 @@ public class CreateStudentRoom extends javax.swing.JFrame {
 
         jLabel6.setText("Email: ");
 
-        emailTextField.setEditable(false);
-
         jLabel7.setText("Major: ");
 
         majorComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "IT", "Health", "Bussiness" }));
 
         jLabel8.setText("Seniority:");
-
-        seniorityTextField.setEditable(false);
 
         hallLabel.setText("Hall:");
 
@@ -128,10 +108,6 @@ public class CreateStudentRoom extends javax.swing.JFrame {
             }
         });
 
-        roomTextField.setEditable(false);
-
-        roomLabel.setText("Room: ");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -140,6 +116,10 @@ public class CreateStudentRoom extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(createStudentButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(clearButton))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -159,10 +139,6 @@ public class CreateStudentRoom extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addComponent(roomLabel)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(roomTextField))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                 .addComponent(jLabel7)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(majorComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -170,27 +146,22 @@ public class CreateStudentRoom extends javax.swing.JFrame {
                                 .addComponent(jLabel5)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(genderComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel6)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(emailTextField))
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(checkButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel8)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(seniorityTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(hallLabel)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(hallTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(0, 76, Short.MAX_VALUE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(createStudentButton)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                                .addComponent(jLabel8)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(seniorityTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(hallLabel)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(hallTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(checkButton, javax.swing.GroupLayout.DEFAULT_SIZE, 82, Short.MAX_VALUE)))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -223,14 +194,12 @@ public class CreateStudentRoom extends javax.swing.JFrame {
                     .addComponent(jLabel8)
                     .addComponent(seniorityTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(hallLabel)
-                    .addComponent(hallTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(hallTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(checkButton))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(checkButton)
-                    .addComponent(roomTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(roomLabel))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
-                .addComponent(createStudentButton)
+                    .addComponent(createStudentButton)
+                    .addComponent(clearButton))
                 .addContainerGap())
         );
 
@@ -238,100 +207,90 @@ public class CreateStudentRoom extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void createStudentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createStudentButtonActionPerformed
-        String id = this.idTextField.getText();
-        String roomName = roomTextField.getText();
-        String hall = this.hallTextField.getText();
-        if (!roomName.isBlank()) {
-            JOptionPane.showMessageDialog(this, "Successfully!");
-            MapStaffAndStudent.mapStudentAccount.get(id).setRoom(roomName);
-            DefaultTableModel table = (DefaultTableModel) studentTable.getModel();
-
-            //add account
-            String pass = id + "st";
-            AccountForLoginMap.getStudentAccountMap().put(id, pass);
-
-            //delete bench
-            table.removeRow(this.row);
-            HallManager.getListStudentID().remove(id);
-
-            // set current for room
-            String idx = String.valueOf(hall.charAt(1));
-            int hallIdx = Integer.parseInt(idx) - 1;
-            List<Room> roomList = AdministratorForm.getHallList().get(hallIdx).getListRoom();
-            for (Room room : roomList) {
-                //initialize variable for oobject
-                String tempRoomName = room.getName();
-                if (tempRoomName.equalsIgnoreCase(roomName)) {
-                    room.setCurrent(room.getCurrent() + 1);
-                }
-            }           
-            BackupDataUtils.backupHallAll(AdministratorForm.getHallList());
-            this.dispose();
-        } else {
-            JOptionPane.showMessageDialog(this, "Room is blank!",
-                    "Error", JOptionPane.ERROR_MESSAGE);
-        }
+        this.addStudentToList();
     }//GEN-LAST:event_createStudentButtonActionPerformed
 
+    private void clearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearButtonActionPerformed
+        this.clear();
+    }//GEN-LAST:event_clearButtonActionPerformed
+
     private void checkButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkButtonActionPerformed
+        //RoomInfor roomInfor = new RoomInfor();
+        String major = (String) this.majorComboBox.getSelectedItem();
+        String gender = (String) this.genderComboBox.getSelectedItem();
+        List<Hall> listHall = Administrator.findSuitableHall(major, gender);
 
-        //initialize Roomstatus
-        ((DefaultTableModel) roomStatusTable.getModel()).setRowCount(0);
-        RoomStatus.addListener();
-        roomStatus.setVisible(true);
-
-        //hall for check room
-        List<Hall> hallList = AdministratorForm.getHallList();
-
-        //
-        for (Hall hall : hallList) {
-            if (hall.getHallName().equals(this.hallTextField.getText())) {
-                RoomStatus.createObject(hall.findVacantRoom());
-            }
+        if (!listHall.isEmpty()) {
+            this.hallTextField.setText(listHall.get(0).getHallName());
+        } else {
+            JOptionPane.showMessageDialog(rootPane, "Hall is full!",
+                    "Error", JOptionPane.ERROR_MESSAGE);
+            //addStudentToList();
+            this.clear();
         }
+
     }//GEN-LAST:event_checkButtonActionPerformed
 
-    public void addStudentToList(String roomName) {
+    public void clear() {
+        this.idTextField.setText("");
+        this.genderComboBox.getItemAt(0);
+        this.majorComboBox.getItemAt(0);
+        this.surNameTextField.setText("");
+        this.lastNameTextField.setText("");
+        this.emailTextField.setText("");
+        this.dobTextField.setText("");
+        this.hallTextField.setText("");
+        this.seniorityTextField.setText("");
+    }
+
+    public void addStudentToList() {
         //get value of textfield
         String id = this.idTextField.getText();
         String firstName = this.lastNameTextField.getText();
         String surName = this.surNameTextField.getText();
         String dob = this.dobTextField.getText();
+
         String gender = (String) this.genderComboBox.getSelectedItem();
-        String email = this.emailTextField.getText();
+
         String major = (String) this.majorComboBox.getSelectedItem();
 
-        //String room = this.hallTextField.getText();
+        String email = this.emailTextField.getText();
+
+        String hallName = this.hallTextField.getText();
+
         //create new student with information
         if (id.isBlank() || firstName.isBlank() || surName.isBlank() || dob.isBlank() || email.isBlank()) {
             JOptionPane.showMessageDialog(this, "Blank field!",
                     "Error", JOptionPane.ERROR_MESSAGE);
         } else {
             try {
+
                 int seniority = Integer.parseInt(this.seniorityTextField.getText());
                 Student student = new Student(id, firstName, surName, dob, gender, email, major, seniority);
+                student.setGenderIdx(this.genderComboBox.getSelectedIndex());
+                student.setMajorIdx(this.majorComboBox.getSelectedIndex());
                 MapStaffAndStudent.mapStudentAccount.put(id, student);
-                student.setRoom(roomName);
+
+                if (hallName.isBlank()) {
+                    this.clear();
+                } else {
+                    // infor for createRoom
+                    int genderIdx = this.genderComboBox.getSelectedIndex();
+                    int majorIdx = this.majorComboBox.getSelectedIndex();
+
+                    //add to bench in HallManager class
+                    HallManager.addToBench(id, hallName);
+
+                }
+
             } catch (NumberFormatException ex) {
                 JOptionPane.showMessageDialog(this, "Wrong number format!",
                         "Error", JOptionPane.ERROR_MESSAGE);
+            } finally {
+                JOptionPane.showMessageDialog(rootPane, "Data will be stored!");
+                this.dispose();
             }
         }
-    }
-
-    public void setTextField(Student student, int genderIdx, int majorIdx, String hallName) {
-        this.idTextField.setText(student.getId());
-        this.genderComboBox.setSelectedIndex(genderIdx);
-        this.majorComboBox.setSelectedIndex(majorIdx);
-        this.surNameTextField.setText(student.getSurName());
-        this.lastNameTextField.setText(student.getFirstName());
-        this.emailTextField.setText(student.getEmail());
-        this.dobTextField.setText(student.getDateOfBirth());
-        this.hallTextField.setText(hallName);
-        this.seniorityTextField.setText(String.valueOf(student.getSeniority()));
-    }
-
-    public void addRoomToTable(Hall hall) {
 
     }
 
@@ -352,22 +311,14 @@ public class CreateStudentRoom extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CreateStudentRoom.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CreateStudentAccount.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CreateStudentRoom.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CreateStudentAccount.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CreateStudentRoom.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CreateStudentAccount.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CreateStudentRoom.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CreateStudentAccount.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -378,15 +329,16 @@ public class CreateStudentRoom extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-//        java.awt.EventQueue.invokeLater(new Runnable() {
-//            public void run() {
-//                new CreateStudentRoom().setVisible(true);
-//            }
-//        });
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new CreateStudentAccount().setVisible(true);
+            }
+        });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton checkButton;
+    private javax.swing.JButton clearButton;
     private javax.swing.JLabel createStudentAccountLabel;
     private javax.swing.JButton createStudentButton;
     private javax.swing.JTextField dobTextField;
@@ -405,8 +357,6 @@ public class CreateStudentRoom extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JTextField lastNameTextField;
     private javax.swing.JComboBox<String> majorComboBox;
-    private javax.swing.JLabel roomLabel;
-    public static javax.swing.JTextField roomTextField;
     private javax.swing.JTextField seniorityTextField;
     private javax.swing.JTextField surNameTextField;
     // End of variables declaration//GEN-END:variables

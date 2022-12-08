@@ -2,22 +2,17 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package staff_view;
+package view;
 
-import controller.BackupDataUtils;
-import staff_view.RoomStatus;
 import staff_view.AdministratorForm;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import model.AccountForLoginMap;
 import model.Student;
 import model.Hall;
-import model.HallManager;
 import model.MapStaffAndStudent;
-import model.Room;
 import static staff_view.HallManagerView.studentTable;
-import static staff_view.RoomStatus.roomStatusTable;
+import static view.RoomStatus.roomStatusTable;
 
 /**
  *
@@ -26,7 +21,6 @@ import static staff_view.RoomStatus.roomStatusTable;
 public class CreateStudentRoom extends javax.swing.JFrame {
 
     RoomStatus roomStatus = new RoomStatus();
-    static int rowForList;
     int row;
 
     public CreateStudentRoom(Student student, int genderIdx, int majorIdx, String hallName, int row) {
@@ -240,36 +234,15 @@ public class CreateStudentRoom extends javax.swing.JFrame {
     private void createStudentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createStudentButtonActionPerformed
         String id = this.idTextField.getText();
         String roomName = roomTextField.getText();
-        String hall = this.hallTextField.getText();
         if (!roomName.isBlank()) {
             JOptionPane.showMessageDialog(this, "Successfully!");
             MapStaffAndStudent.mapStudentAccount.get(id).setRoom(roomName);
             DefaultTableModel table = (DefaultTableModel) studentTable.getModel();
-
-            //add account
-            String pass = id + "st";
-            AccountForLoginMap.getStudentAccountMap().put(id, pass);
-
-            //delete bench
             table.removeRow(this.row);
-            HallManager.getListStudentID().remove(id);
-
-            // set current for room
-            String idx = String.valueOf(hall.charAt(1));
-            int hallIdx = Integer.parseInt(idx) - 1;
-            List<Room> roomList = AdministratorForm.getHallList().get(hallIdx).getListRoom();
-            for (Room room : roomList) {
-                //initialize variable for oobject
-                String tempRoomName = room.getName();
-                if (tempRoomName.equalsIgnoreCase(roomName)) {
-                    room.setCurrent(room.getCurrent() + 1);
-                }
-            }           
-            BackupDataUtils.backupHallAll(AdministratorForm.getHallList());
             this.dispose();
         } else {
             JOptionPane.showMessageDialog(this, "Room is blank!",
-                    "Error", JOptionPane.ERROR_MESSAGE);
+                     "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_createStudentButtonActionPerformed
 
