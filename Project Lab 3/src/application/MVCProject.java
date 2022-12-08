@@ -7,7 +7,8 @@ import java.io.File;
 import java.util.HashMap;
 import model.HallManager;
 import model.MapStaffAndStudent;
-import view.LoginForm;
+import staff_view.AdministratorForm;
+import student_view.LoginForm;
 import staff_view.SecretaryHomePage;
 
 public class MVCProject {
@@ -19,6 +20,7 @@ public class MVCProject {
         //initialize staff
         new SecretaryHomePage();
         new MapStaffAndStudent();
+        new AdministratorForm();
         
         File file = new File("HallForCreateRoom.txt");                
         RestoreDataUtils.restoreHallInfor(file);

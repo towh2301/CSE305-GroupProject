@@ -10,8 +10,7 @@ import javax.swing.table.DefaultTableModel;
 import model.HallManager;
 import model.MapStaffAndStudent;
 import model.Student;
-import view.CreateStudentRoom;
-import view.LoginForm;
+import student_view.LoginForm;
 
 public class HallManagerView extends javax.swing.JFrame {
 

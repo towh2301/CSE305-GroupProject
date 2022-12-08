@@ -14,8 +14,8 @@ import model.Room;
 import model.Staff;
 import model.Student;
 import staff_view.CreateStaffAccount;
-import view.CreateStudentAccount;
-import view.RoomStatus;
+import staff_view.CreateStudentAccount;
+import staff_view.RoomStatus;
 
 public class RestoreDataUtils {
     static FileReader frd = null;

@@ -12,11 +12,9 @@ import javax.swing.JButton;
 import model.Hall;
 import model.Staff;
 import staff_view.CreateStaffAccount;
-import view.CreateStudentAccount;
-import view.CreateStudentAccount;
-import view.LoginForm;
-import view.LoginForm;
-import view.LoginForm;
+import student_view.LoginForm;
+import student_view.LoginForm;
+import student_view.LoginForm;
 
 /**
  *
@@ -28,7 +26,7 @@ public class AdministratorForm extends javax.swing.JFrame {
      * Creates new form AdministratorForm
      */
     
-    private static List<Hall> hallList = RestoreDataUtils.restoreHallAll();
+    private static List<Hall> hallList;
 
     public static List<Hall> getHallList() {
         return hallList;
@@ -36,6 +34,7 @@ public class AdministratorForm extends javax.swing.JFrame {
     
     public AdministratorForm() {
         initComponents();
+        AdministratorForm.hallList = RestoreDataUtils.restoreHallAll();
         this.setResizable(false);
         this.setLocationRelativeTo(null);
         ExitOptionBackup.exitOption(this); 
