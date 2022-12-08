@@ -4,12 +4,25 @@
  */
 package student_view;
 
+<<<<<<< HEAD
 import controller.Administrator;
 import model.GuestModel;
 import staff_view.RoomStatus;
 import model.Student;
 import model.Hall;
 import model.HallManager;
+=======
+import staff_view.RoomStatus;
+import staff_view.AdministratorForm;
+import java.util.List;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import model.Student;
+import model.Hall;
+import model.MapStaffAndStudent;
+import static staff_view.HallManagerView.studentTable;
+import static staff_view.RoomStatus.roomStatusTable;
+>>>>>>> 9624a6969165480328bf4b89ec10f7b2bd1bbd83
 
 /**
  *
@@ -19,20 +32,26 @@ public class BookingGuestRoomForm extends javax.swing.JFrame {
 
     RoomStatus roomStatus;
 
+<<<<<<< HEAD
     public HallManager hallManager;
 
     public int hallNumber;
 
+=======
+>>>>>>> 9624a6969165480328bf4b89ec10f7b2bd1bbd83
     public BookingGuestRoomForm(Student student) {
         this.roomStatus = new RoomStatus();
         initComponents();
         this.setResizable(false);
         this.setLocationRelativeTo(this);
         this.setTextField(student);
+<<<<<<< HEAD
         this.hallNumber = student.getHallName();
 
         this.hallManager = Administrator.getListHallManagers().get(hallNumber - 1);
 
+=======
+>>>>>>> 9624a6969165480328bf4b89ec10f7b2bd1bbd83
     }
 
     /**
@@ -59,15 +78,25 @@ public class BookingGuestRoomForm extends javax.swing.JFrame {
         emailTextField = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
+<<<<<<< HEAD
         durationTextField = new javax.swing.JTextField();
         hallLabel = new javax.swing.JLabel();
         hallTextField = new javax.swing.JTextField();
+=======
+        seniorityTextField = new javax.swing.JTextField();
+        hallLabel = new javax.swing.JLabel();
+        hallTextField = new javax.swing.JTextField();
+        checkButton = new javax.swing.JButton();
+>>>>>>> 9624a6969165480328bf4b89ec10f7b2bd1bbd83
         roomTextField = new javax.swing.JTextField();
         roomLabel = new javax.swing.JLabel();
         majorTextField = new javax.swing.JTextField();
         genderTextField = new javax.swing.JTextField();
+<<<<<<< HEAD
         dayTextField = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
+=======
+>>>>>>> 9624a6969165480328bf4b89ec10f7b2bd1bbd83
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -80,7 +109,11 @@ public class BookingGuestRoomForm extends javax.swing.JFrame {
 
         createStudentAccountLabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         createStudentAccountLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+<<<<<<< HEAD
         createStudentAccountLabel.setText("Booking Guest Room");
+=======
+        createStudentAccountLabel.setText("Create Student Room");
+>>>>>>> 9624a6969165480328bf4b89ec10f7b2bd1bbd83
 
         jLabel1.setText("ID: ");
 
@@ -90,7 +123,11 @@ public class BookingGuestRoomForm extends javax.swing.JFrame {
 
         surNameTextField.setEditable(false);
 
+<<<<<<< HEAD
         jLabel3.setText("First Name");
+=======
+        jLabel3.setText("Last Name: ");
+>>>>>>> 9624a6969165480328bf4b89ec10f7b2bd1bbd83
 
         lastNameTextField.setEditable(false);
 
@@ -106,12 +143,28 @@ public class BookingGuestRoomForm extends javax.swing.JFrame {
 
         jLabel7.setText("Major: ");
 
+<<<<<<< HEAD
         jLabel8.setText("Duration:");
+=======
+        jLabel8.setText("Seniority:");
+
+        seniorityTextField.setEditable(false);
+>>>>>>> 9624a6969165480328bf4b89ec10f7b2bd1bbd83
 
         hallLabel.setText("Hall:");
 
         hallTextField.setEditable(false);
 
+<<<<<<< HEAD
+=======
+        checkButton.setText("Check");
+        checkButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkButtonActionPerformed(evt);
+            }
+        });
+
+>>>>>>> 9624a6969165480328bf4b89ec10f7b2bd1bbd83
         roomTextField.setEditable(false);
 
         roomLabel.setText("Room: ");
@@ -120,8 +173,11 @@ public class BookingGuestRoomForm extends javax.swing.JFrame {
 
         genderTextField.setEditable(false);
 
+<<<<<<< HEAD
         jLabel9.setText("Begin Day:");
 
+=======
+>>>>>>> 9624a6969165480328bf4b89ec10f7b2bd1bbd83
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -145,6 +201,7 @@ public class BookingGuestRoomForm extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+<<<<<<< HEAD
                         .addComponent(lastNameTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 194, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -156,10 +213,27 @@ public class BookingGuestRoomForm extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(genderTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
+=======
+                        .addComponent(lastNameTextField))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(roomLabel)
+                            .addComponent(jLabel7)
+                            .addComponent(jLabel5))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(roomTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 84, Short.MAX_VALUE)
+                            .addComponent(majorTextField)
+                            .addComponent(genderTextField))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+>>>>>>> 9624a6969165480328bf4b89ec10f7b2bd1bbd83
                                 .addComponent(jLabel6)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(emailTextField))
                             .addGroup(layout.createSequentialGroup()
+<<<<<<< HEAD
                                 .addComponent(majorTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(roomLabel)
@@ -177,11 +251,28 @@ public class BookingGuestRoomForm extends javax.swing.JFrame {
                                 .addComponent(durationTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(bookRoomButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+=======
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(checkButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel8)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(seniorityTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(hallLabel)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(hallTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(0, 76, Short.MAX_VALUE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(bookRoomButton)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+>>>>>>> 9624a6969165480328bf4b89ec10f7b2bd1bbd83
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+<<<<<<< HEAD
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -222,12 +313,51 @@ public class BookingGuestRoomForm extends javax.swing.JFrame {
                             .addComponent(bookRoomButton)
                             .addComponent(dayTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(46, 46, 46))
+=======
+                .addContainerGap()
+                .addComponent(createStudentAccountLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(idTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4)
+                    .addComponent(dobTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(surNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3)
+                    .addComponent(lastNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel6)
+                    .addComponent(emailTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(genderTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(jLabel8)
+                    .addComponent(seniorityTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(hallLabel)
+                    .addComponent(hallTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(majorTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(checkButton)
+                    .addComponent(roomTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(roomLabel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
+                .addComponent(bookRoomButton)
+                .addContainerGap())
+>>>>>>> 9624a6969165480328bf4b89ec10f7b2bd1bbd83
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void bookRoomButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bookRoomButtonActionPerformed
+<<<<<<< HEAD
         int duration;
         String id, beginDay;
         try {
@@ -244,6 +374,60 @@ public class BookingGuestRoomForm extends javax.swing.JFrame {
 
     }//GEN-LAST:event_bookRoomButtonActionPerformed
 
+=======
+        String id = this.idTextField.getText();
+        String roomName = roomTextField.getText();
+        
+    }//GEN-LAST:event_bookRoomButtonActionPerformed
+
+    private void checkButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkButtonActionPerformed
+
+        //initialize Roomstatus
+        ((DefaultTableModel) roomStatusTable.getModel()).setRowCount(0);
+        
+        roomStatus.setVisible(true);
+        RoomStatus.addListener();
+
+        //hall for check room
+        List<Hall> hallList = AdministratorForm.getHallList();
+
+        //
+        for (Hall hall : hallList) {
+            if (hall.getHallName().equals(this.hallTextField.getText())) {
+                RoomStatus.createObject(hall.findVacantRoom());
+            }
+        }
+    }//GEN-LAST:event_checkButtonActionPerformed
+
+//    public void addStudentToList(String roomName) {
+//        //get value of textfield
+//        String id = this.idTextField.getText();
+//        String firstName = this.lastNameTextField.getText();
+//        String surName = this.surNameTextField.getText();
+//        String dob = this.dobTextField.getText();
+//        String gender = "";
+//        String email = this.emailTextField.getText();
+//        String major = "";
+//
+//        //String room = this.hallTextField.getText();
+//        //create new student with information
+//        if (id.isBlank() || firstName.isBlank() || surName.isBlank() || dob.isBlank() || email.isBlank()) {
+//            JOptionPane.showMessageDialog(this, "Blank field!",
+//                    "Error", JOptionPane.ERROR_MESSAGE);
+//        } else {
+//            try {
+//                int seniority = Integer.parseInt(this.seniorityTextField.getText());
+//                Student student = new Student(id, firstName, surName, dob, gender, email, major, seniority);
+//                MapStaffAndStudent.mapStudentAccount.put(id, student);
+//                student.setRoom(roomName);
+//            } catch (NumberFormatException ex) {
+//                JOptionPane.showMessageDialog(this, "Wrong number format!",
+//                        "Error", JOptionPane.ERROR_MESSAGE);
+//            }
+//        }
+//    }
+
+>>>>>>> 9624a6969165480328bf4b89ec10f7b2bd1bbd83
     public void setTextField(Student student) {
         this.idTextField.setText(student.getId());
         this.genderTextField.setText(student.getGender());
@@ -251,10 +435,19 @@ public class BookingGuestRoomForm extends javax.swing.JFrame {
         this.surNameTextField.setText(student.getSurName());
         this.lastNameTextField.setText(student.getFirstName());
         this.emailTextField.setText(student.getEmail());
+<<<<<<< HEAD
         this.roomTextField.setText(student.getRoom());
 
         String hallName = student.getRoom().substring(0, 2);
         this.hallTextField.setText(hallName);
+=======
+        this.dobTextField.setText(student.getDateOfBirth());
+        
+        String hallName = student.getRoom().substring(0, 2);
+        
+        this.hallTextField.setText(hallName);
+        this.seniorityTextField.setText(String.valueOf(student.getSeniority()));
+>>>>>>> 9624a6969165480328bf4b89ec10f7b2bd1bbd83
     }
 
     public void addRoomToTable(Hall hall) {
@@ -336,10 +529,16 @@ public class BookingGuestRoomForm extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bookRoomButton;
+<<<<<<< HEAD
     private javax.swing.JLabel createStudentAccountLabel;
     private javax.swing.JTextField dayTextField;
     private javax.swing.JTextField dobTextField;
     private javax.swing.JTextField durationTextField;
+=======
+    private javax.swing.JButton checkButton;
+    private javax.swing.JLabel createStudentAccountLabel;
+    private javax.swing.JTextField dobTextField;
+>>>>>>> 9624a6969165480328bf4b89ec10f7b2bd1bbd83
     private javax.swing.JTextField emailTextField;
     private javax.swing.JTextField genderTextField;
     private javax.swing.JLabel hallLabel;
@@ -353,11 +552,19 @@ public class BookingGuestRoomForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+<<<<<<< HEAD
     private javax.swing.JLabel jLabel9;
     private javax.swing.JTextField lastNameTextField;
     private javax.swing.JTextField majorTextField;
     private javax.swing.JLabel roomLabel;
     public javax.swing.JTextField roomTextField;
+=======
+    private javax.swing.JTextField lastNameTextField;
+    private javax.swing.JTextField majorTextField;
+    private javax.swing.JLabel roomLabel;
+    public static javax.swing.JTextField roomTextField;
+    private javax.swing.JTextField seniorityTextField;
+>>>>>>> 9624a6969165480328bf4b89ec10f7b2bd1bbd83
     private javax.swing.JTextField surNameTextField;
     // End of variables declaration//GEN-END:variables
 }

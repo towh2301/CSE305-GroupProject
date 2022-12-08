@@ -7,8 +7,12 @@ import java.util.*;
 import javax.swing.JOptionPane;
 import model.AccountForLoginMap;
 import staff_view.HallManagerView;
+<<<<<<< HEAD
 import staff_view.MaintenanceSecretaryHomePage;
 import staff_view.MessSecretaryHomePage;
+=======
+import staff_view.SecretaryHomePage;
+>>>>>>> 9624a6969165480328bf4b89ec10f7b2bd1bbd83
 import staff_view.WardenMess;
 import student_view.StudentHomePage;
 
@@ -138,6 +142,7 @@ public class LoginForm extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Login Successfully");
             this.dispose();
             String sign = String.valueOf(username.charAt(0));
+<<<<<<< HEAD
             
             
             
@@ -154,6 +159,13 @@ public class LoginForm extends javax.swing.JFrame {
                 }
                 case "C" ->
                     new WardenMess(Integer.parseInt(String.valueOf(username.charAt(6)))).setVisible(true);
+=======
+            switch (sign) {
+                case "S" ->
+                    new SecretaryHomePage().setVisible(true);
+                case "C" ->
+                    new WardenMess().setVisible(true);
+>>>>>>> 9624a6969165480328bf4b89ec10f7b2bd1bbd83
                 case "M" ->
                     new WardenMaintenance().setVisible(true);
                 case "A" ->

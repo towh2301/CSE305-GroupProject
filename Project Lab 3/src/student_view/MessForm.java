@@ -4,6 +4,7 @@
  */
 package student_view;
 
+<<<<<<< HEAD
 import view.LoginForm;
 import controller.AccountInforMap;
 import controller.Administrator;
@@ -12,6 +13,11 @@ import model.Form;
 import model.MapStaffAndStudent;
 import staff_view.MaintenanceSecretaryHomePage;
 import staff_view.MessSecretaryHomePage;
+=======
+import controller.AccountInforMap;
+import javax.swing.JOptionPane;
+import staff_view.SecretaryHomePage;
+>>>>>>> 9624a6969165480328bf4b89ec10f7b2bd1bbd83
 
 /**
  *
@@ -23,14 +29,23 @@ public class MessForm extends javax.swing.JFrame {
      * Creates new form SubmitFormMess
      */
     public MessForm() {
+<<<<<<< HEAD
         initComponents();
         //this.setSize(479, 460);
+=======
+        
+        this.setSize(479, 460);
+>>>>>>> 9624a6969165480328bf4b89ec10f7b2bd1bbd83
         this.setResizable(false);
         this.setLocationRelativeTo(null);
         this.nameTextFields.setText(AccountInforMap.getName(LoginForm.getUserName()));
         this.idTextFields.setText(AccountInforMap.getId(LoginForm.getUserName()));
         this.roomTextFields.setText(AccountInforMap.getRoom(LoginForm.getUserName()));
+<<<<<<< HEAD
         
+=======
+        initComponents();
+>>>>>>> 9624a6969165480328bf4b89ec10f7b2bd1bbd83
         
     }
 
@@ -58,9 +73,12 @@ public class MessForm extends javax.swing.JFrame {
         submitButton = new javax.swing.JButton();
         clearButton = new javax.swing.JButton();
         idTextFields = new javax.swing.JTextField();
+<<<<<<< HEAD
         jPanel1 = new javax.swing.JPanel();
         summaryTextField = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
+=======
+>>>>>>> 9624a6969165480328bf4b89ec10f7b2bd1bbd83
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(467, 430));
@@ -106,7 +124,11 @@ public class MessForm extends javax.swing.JFrame {
                         .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(roomTextFields, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+<<<<<<< HEAD
                         .addGap(0, 240, Short.MAX_VALUE)))
+=======
+                        .addGap(0, 0, Short.MAX_VALUE)))
+>>>>>>> 9624a6969165480328bf4b89ec10f7b2bd1bbd83
                 .addGap(6, 6, 6))
         );
         basicInfoPanelLayout.setVerticalGroup(
@@ -120,13 +142,21 @@ public class MessForm extends javax.swing.JFrame {
                 .addGroup(basicInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(roomTextFields, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+<<<<<<< HEAD
                 .addGap(0, 11, Short.MAX_VALUE))
+=======
+                .addGap(0, 9, Short.MAX_VALUE))
+>>>>>>> 9624a6969165480328bf4b89ec10f7b2bd1bbd83
         );
 
         basicInfoLabel.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         basicInfoLabel.setText("Basic Info");
 
+<<<<<<< HEAD
         formIDLabel.setText("Student ID:");
+=======
+        formIDLabel.setText("Form ID:");
+>>>>>>> 9624a6969165480328bf4b89ec10f7b2bd1bbd83
 
         descriptionLabel.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         descriptionLabel.setText("Problem Description");
@@ -141,6 +171,7 @@ public class MessForm extends javax.swing.JFrame {
         descriptionPane.setLayout(descriptionPaneLayout);
         descriptionPaneLayout.setHorizontalGroup(
             descriptionPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+<<<<<<< HEAD
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, descriptionPaneLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(descriptionScrollPane)
@@ -152,6 +183,23 @@ public class MessForm extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(descriptionScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
                 .addContainerGap())
+=======
+            .addGap(0, 429, Short.MAX_VALUE)
+            .addGroup(descriptionPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(descriptionPaneLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(descriptionScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 417, Short.MAX_VALUE)
+                    .addContainerGap()))
+        );
+        descriptionPaneLayout.setVerticalGroup(
+            descriptionPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 183, Short.MAX_VALUE)
+            .addGroup(descriptionPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(descriptionPaneLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(descriptionScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+>>>>>>> 9624a6969165480328bf4b89ec10f7b2bd1bbd83
         );
 
         submitButton.setText("Submit");
@@ -170,6 +218,7 @@ public class MessForm extends javax.swing.JFrame {
 
         idTextFields.setEditable(false);
 
+<<<<<<< HEAD
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -192,10 +241,13 @@ public class MessForm extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel1.setText("Summary");
 
+=======
+>>>>>>> 9624a6969165480328bf4b89ec10f7b2bd1bbd83
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+<<<<<<< HEAD
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
@@ -224,6 +276,28 @@ public class MessForm extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(submitButton)
                 .addGap(16, 16, 16))
+=======
+            .addGroup(layout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(formTitleLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(basicInfoPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(basicInfoLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(descriptionLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(descriptionPane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(clearButton)
+                        .addGap(18, 18, 18)
+                        .addComponent(submitButton)))
+                .addGap(17, 17, 17))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(formIDLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(idTextFields, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+>>>>>>> 9624a6969165480328bf4b89ec10f7b2bd1bbd83
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -238,6 +312,7 @@ public class MessForm extends javax.swing.JFrame {
                 .addComponent(basicInfoLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(basicInfoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+<<<<<<< HEAD
                 .addGap(17, 17, 17)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -251,6 +326,17 @@ public class MessForm extends javax.swing.JFrame {
                     .addComponent(clearButton)
                     .addComponent(submitButton))
                 .addContainerGap(31, Short.MAX_VALUE))
+=======
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(descriptionLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(descriptionPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(submitButton)
+                    .addComponent(clearButton))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+>>>>>>> 9624a6969165480328bf4b89ec10f7b2bd1bbd83
         );
 
         pack();
@@ -262,26 +348,36 @@ public class MessForm extends javax.swing.JFrame {
 
     private void clearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearButtonActionPerformed
         this.descriptionTextArea.setText("");
+<<<<<<< HEAD
         this.summaryTextField.setText("");
+=======
+>>>>>>> 9624a6969165480328bf4b89ec10f7b2bd1bbd83
     }//GEN-LAST:event_clearButtonActionPerformed
 
     private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitButtonActionPerformed
         String id = this.idTextFields.getText();
         String name = this.nameTextFields.getText();
         String room = this.roomTextFields.getText();
+<<<<<<< HEAD
         String summary = this.summaryTextField.getText();
+=======
+>>>>>>> 9624a6969165480328bf4b89ec10f7b2bd1bbd83
         String description = this.descriptionTextArea.getText();
 
         if (description.isBlank()) {
             JOptionPane.showMessageDialog(rootPane, "Description is blank!",
                     "Warning!", JOptionPane.ERROR_MESSAGE);
         } else {
+<<<<<<< HEAD
             Form form = new Form(summary, summary, description);
             int staffIdx = MapStaffAndStudent.mapStudentAccount.get(id).getHallName()-1;
             
             Administrator.getListGeneralSecretarys().get(staffIdx).getListFormMess().add(form);
            
             
+=======
+            SecretaryHomePage.addRowMessTable(new Object[]{id, name, room, description});
+>>>>>>> 9624a6969165480328bf4b89ec10f7b2bd1bbd83
             JOptionPane.showMessageDialog(rootPane, "Successfull!");
         }
 
@@ -339,6 +435,7 @@ public class MessForm extends javax.swing.JFrame {
     private javax.swing.JLabel formIDLabel;
     private javax.swing.JLabel formTitleLabel;
     private javax.swing.JTextField idTextFields;
+<<<<<<< HEAD
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -347,5 +444,12 @@ public class MessForm extends javax.swing.JFrame {
     private javax.swing.JTextField roomTextFields;
     private javax.swing.JButton submitButton;
     private javax.swing.JTextField summaryTextField;
+=======
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JTextField nameTextFields;
+    private javax.swing.JTextField roomTextFields;
+    private javax.swing.JButton submitButton;
+>>>>>>> 9624a6969165480328bf4b89ec10f7b2bd1bbd83
     // End of variables declaration//GEN-END:variables
 }

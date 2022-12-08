@@ -80,7 +80,11 @@ public class CreateStudentAccount extends javax.swing.JFrame {
 
         jLabel2.setText("Sur Name: ");
 
+<<<<<<< HEAD
         jLabel3.setText("First Name:");
+=======
+        jLabel3.setText("Last Name: ");
+>>>>>>> 9624a6969165480328bf4b89ec10f7b2bd1bbd83
 
         jLabel4.setText("Date Of Birth: ");
 

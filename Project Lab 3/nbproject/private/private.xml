@@ -3,12 +3,22 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/Users/kuriy/OneDrive/Desktop/New%20folder/CSE305-GroupProject/Project%20Lab%203/src/model/HallManager.java</file>
             <file>file:/C:/Users/kuriy/OneDrive/Desktop/New%20folder/CSE305-GroupProject/Project%20Lab%203/src/view/LoginForm.java</file>
             <file>file:/C:/Users/kuriy/OneDrive/Desktop/New%20folder/CSE305-GroupProject/Project%20Lab%203/src/student_view/BookingGuestRoomForm.java</file>
             <file>file:/C:/Users/kuriy/OneDrive/Desktop/New%20folder/CSE305-GroupProject/Project%20Lab%203/src/controller/RestoreDataUtils.java</file>
             <file>file:/C:/Users/kuriy/OneDrive/Desktop/New%20folder/CSE305-GroupProject/Project%20Lab%203/src/model/GuestModel.java</file>
             <file>file:/C:/Users/kuriy/OneDrive/Desktop/New%20folder/CSE305-GroupProject/Project%20Lab%203/src/staff_view/HallManagerView.java</file>
+=======
+            <file>file:/C:/Users/kuriy/OneDrive/Desktop/New%20folder/CSE305-GroupProject/Project%20Lab%203/src/view/CreateStudentRoom.java</file>
+            <file>file:/C:/Users/kuriy/OneDrive/Desktop/New%20folder/CSE305-GroupProject/Project%20Lab%203/src/staff_view/AdministratorForm.java</file>
+            <file>file:/C:/Users/kuriy/OneDrive/Desktop/New%20folder/CSE305-GroupProject/Project%20Lab%203/src/model/Hall.java</file>
+            <file>file:/C:/Users/kuriy/OneDrive/Desktop/New%20folder/CSE305-GroupProject/Project%20Lab%203/src/staff_view/CreateStudentRoom.java</file>
+            <file>file:/C:/Users/kuriy/OneDrive/Desktop/New%20folder/CSE305-GroupProject/Project%20Lab%203/src/staff_view/RoomStatus.java</file>
+            <file>file:/C:/Users/kuriy/OneDrive/Desktop/New%20folder/CSE305-GroupProject/Project%20Lab%203/src/staff_view/HallManagerView.java</file>
+            <file>file:/C:/Users/kuriy/OneDrive/Desktop/New%20folder/CSE305-GroupProject/Project%20Lab%203/src/controller/BackupDataUtils.java</file>
+>>>>>>> 9624a6969165480328bf4b89ec10f7b2bd1bbd83
         </group>
     </open-files>
 </project-private>

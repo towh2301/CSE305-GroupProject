@@ -60,9 +60,12 @@ public class Student extends People{
         return majorIdx;
     }
     
+<<<<<<< HEAD
     public int getHallName() {
         return Integer.parseInt(this.room.substring(1, this.room.indexOf(".")));
     }
     
+=======
+>>>>>>> 9624a6969165480328bf4b89ec10f7b2bd1bbd83
     
 }

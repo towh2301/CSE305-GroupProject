@@ -43,6 +43,7 @@
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
+<<<<<<< HEAD
                       <Component id="lastNameTextField" pref="194" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
@@ -56,10 +57,30 @@
                           <Group type="102" attributes="0">
                               <Component id="genderTextField" min="-2" pref="84" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
+=======
+                      <Component id="lastNameTextField" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="roomLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel7" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="roomTextField" pref="84" max="32767" attributes="0"/>
+                          <Component id="majorTextField" max="32767" attributes="0"/>
+                          <Component id="genderTextField" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+>>>>>>> 9624a6969165480328bf4b89ec10f7b2bd1bbd83
                               <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="emailTextField" max="32767" attributes="0"/>
                           </Group>
+<<<<<<< HEAD
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="majorTextField" min="-2" pref="133" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
@@ -82,6 +103,29 @@
                           </Group>
                       </Group>
                   </Group>
+=======
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                  <Component id="checkButton" alignment="0" max="32767" attributes="0"/>
+                                  <Group type="102" attributes="0">
+                                      <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="seniorityTextField" min="-2" pref="61" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="hallLabel" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="hallTextField" min="-2" pref="54" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace min="0" pref="76" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="bookRoomButton" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  </Group>
+>>>>>>> 9624a6969165480328bf4b89ec10f7b2bd1bbd83
               </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -90,6 +134,7 @@
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
+<<<<<<< HEAD
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
@@ -138,6 +183,49 @@
                   </Group>
               </Group>
               <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
+=======
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="createStudentAccountLabel" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="idTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="dobTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="surNameTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lastNameTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="emailTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="genderTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="seniorityTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="hallLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="hallTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="majorTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="checkButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="roomTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="roomLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="8" max="32767" attributes="0"/>
+              <Component id="bookRoomButton" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+>>>>>>> 9624a6969165480328bf4b89ec10f7b2bd1bbd83
           </Group>
       </Group>
     </DimensionLayout>
@@ -157,7 +245,11 @@
           <Font name="Segoe UI" size="14" style="1"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
+<<<<<<< HEAD
         <Property name="text" type="java.lang.String" value="Booking Guest Room"/>
+=======
+        <Property name="text" type="java.lang.String" value="Create Student Room"/>
+>>>>>>> 9624a6969165480328bf4b89ec10f7b2bd1bbd83
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
@@ -182,7 +274,11 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">
       <Properties>
+<<<<<<< HEAD
         <Property name="text" type="java.lang.String" value="First Name"/>
+=======
+        <Property name="text" type="java.lang.String" value="Last Name: "/>
+>>>>>>> 9624a6969165480328bf4b89ec10f7b2bd1bbd83
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="lastNameTextField">
@@ -222,10 +318,20 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel8">
       <Properties>
+<<<<<<< HEAD
         <Property name="text" type="java.lang.String" value="Duration:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="durationTextField">
+=======
+        <Property name="text" type="java.lang.String" value="Seniority:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="seniorityTextField">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
+>>>>>>> 9624a6969165480328bf4b89ec10f7b2bd1bbd83
     </Component>
     <Component class="javax.swing.JLabel" name="hallLabel">
       <Properties>
@@ -240,12 +346,27 @@
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
       </AuxValues>
     </Component>
+<<<<<<< HEAD
+=======
+    <Component class="javax.swing.JButton" name="checkButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Check"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="checkButtonActionPerformed"/>
+      </Events>
+    </Component>
+>>>>>>> 9624a6969165480328bf4b89ec10f7b2bd1bbd83
     <Component class="javax.swing.JTextField" name="roomTextField">
       <Properties>
         <Property name="editable" type="boolean" value="false"/>
       </Properties>
       <AuxValues>
+<<<<<<< HEAD
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+=======
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+>>>>>>> 9624a6969165480328bf4b89ec10f7b2bd1bbd83
       </AuxValues>
     </Component>
     <Component class="javax.swing.JLabel" name="roomLabel">
@@ -263,6 +384,7 @@
         <Property name="editable" type="boolean" value="false"/>
       </Properties>
     </Component>
+<<<<<<< HEAD
     <Component class="javax.swing.JTextField" name="dayTextField">
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel9">
@@ -270,5 +392,7 @@
         <Property name="text" type="java.lang.String" value="Begin Day:"/>
       </Properties>
     </Component>
+=======
+>>>>>>> 9624a6969165480328bf4b89ec10f7b2bd1bbd83
   </SubComponents>
 </Form>

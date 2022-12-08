@@ -15,6 +15,7 @@
         </MenuItem>
       </SubComponents>
     </Container>
+<<<<<<< HEAD
     <Container class="javax.swing.JFrame" name="viewStudentFrame">
 
       <Layout>
@@ -171,6 +172,8 @@
         </Component>
       </SubComponents>
     </Container>
+=======
+>>>>>>> 9624a6969165480328bf4b89ec10f7b2bd1bbd83
     <Menu class="javax.swing.JMenuBar" name="jMenuBar1">
       <SubComponents>
         <Menu class="javax.swing.JMenu" name="staffMenu">
@@ -180,6 +183,7 @@
           <AccessibilityProperties>
             <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="Form"/>
           </AccessibilityProperties>
+<<<<<<< HEAD
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="viewBenchMenuItem">
               <Properties>
@@ -201,6 +205,8 @@
               </AuxValues>
             </MenuItem>
           </SubComponents>
+=======
+>>>>>>> 9624a6969165480328bf4b89ec10f7b2bd1bbd83
         </Menu>
       </SubComponents>
     </Menu>
@@ -231,26 +237,57 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
+<<<<<<< HEAD
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="32767" attributes="0"/>
               <Component id="logoutButton" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
           <Component id="jLabel1" alignment="1" pref="321" max="32767" attributes="0"/>
+=======
+          <Component id="jLabel1" pref="599" max="32767" attributes="0"/>
+          <Group type="102" attributes="0">
+              <EmptySpace pref="521" max="32767" attributes="0"/>
+              <Component id="logoutButton" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+          <Component id="jScrollPane1" alignment="0" pref="0" max="32767" attributes="0"/>
+>>>>>>> 9624a6969165480328bf4b89ec10f7b2bd1bbd83
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
+<<<<<<< HEAD
               <Component id="jLabel1" min="-2" pref="34" max="-2" attributes="0"/>
               <EmptySpace pref="150" max="32767" attributes="0"/>
               <Component id="logoutButton" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
+=======
+              <Component id="jLabel1" min="-2" pref="24" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="jScrollPane1" min="-2" pref="309" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+              <Component id="logoutButton" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="61" max="32767" attributes="0"/>
+>>>>>>> 9624a6969165480328bf4b89ec10f7b2bd1bbd83
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
+<<<<<<< HEAD
+=======
+    <Component class="javax.swing.JLabel" name="jLabel1">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="12" style="1"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
+        <Property name="text" type="java.lang.String" value="Hall Bench"/>
+      </Properties>
+    </Component>
+>>>>>>> 9624a6969165480328bf4b89ec10f7b2bd1bbd83
     <Component class="javax.swing.JButton" name="logoutButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="Logout"/>
@@ -259,6 +296,7 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="logoutButtonActionPerformed"/>
       </Events>
     </Component>
+<<<<<<< HEAD
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -268,5 +306,49 @@
         <Property name="text" type="java.lang.String" value="Hall Manager"/>
       </Properties>
     </Component>
+=======
+    <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+      <AuxValues>
+        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+      </AuxValues>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <SubComponents>
+        <Component class="javax.swing.JTable" name="studentTable">
+          <Properties>
+            <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+              <Table columnCount="2" rowCount="0">
+                <Column editable="false" title="ID" type="java.lang.String"/>
+                <Column editable="false" title="Name" type="java.lang.String"/>
+              </Table>
+            </Property>
+            <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+              <TableColumnModel selectionModel="0">
+                <Column maxWidth="-1" minWidth="-1" prefWidth="1" resizable="false">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="100" resizable="false">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+              </TableColumnModel>
+            </Property>
+            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+              <Color id="Default Cursor"/>
+            </Property>
+            <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+              <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+          </AuxValues>
+        </Component>
+      </SubComponents>
+    </Container>
+>>>>>>> 9624a6969165480328bf4b89ec10f7b2bd1bbd83
   </SubComponents>
 </Form>

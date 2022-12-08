@@ -5,7 +5,12 @@
 package staff_view;
 
 import controller.BackupDataUtils;
+<<<<<<< HEAD
 import java.io.File;
+=======
+import staff_view.RoomStatus;
+import staff_view.AdministratorForm;
+>>>>>>> 9624a6969165480328bf4b89ec10f7b2bd1bbd83
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -265,8 +270,11 @@ public class CreateStudentRoom extends javax.swing.JFrame {
                 }
             }           
             BackupDataUtils.backupHallAll(AdministratorForm.getHallList());
+<<<<<<< HEAD
             File file = new File("HallForCreateRoom.txt");
             BackupDataUtils.backupHallForManager(file);
+=======
+>>>>>>> 9624a6969165480328bf4b89ec10f7b2bd1bbd83
             this.dispose();
         } else {
             JOptionPane.showMessageDialog(this, "Room is blank!",

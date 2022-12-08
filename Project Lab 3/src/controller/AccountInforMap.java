@@ -1,6 +1,10 @@
 package controller;
 
 import static model.MapStaffAndStudent.mapStudentAccount;
+<<<<<<< HEAD
+=======
+import staff_view.CreateStudentAccount;
+>>>>>>> 9624a6969165480328bf4b89ec10f7b2bd1bbd83
 
 public class AccountInforMap {
 

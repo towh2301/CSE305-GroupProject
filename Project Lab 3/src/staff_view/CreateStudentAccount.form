@@ -176,7 +176,11 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">
       <Properties>
+<<<<<<< HEAD
         <Property name="text" type="java.lang.String" value="First Name:"/>
+=======
+        <Property name="text" type="java.lang.String" value="Last Name: "/>
+>>>>>>> 9624a6969165480328bf4b89ec10f7b2bd1bbd83
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="lastNameTextField">

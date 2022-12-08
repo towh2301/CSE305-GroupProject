@@ -28,6 +28,7 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
+<<<<<<< HEAD
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
@@ -58,6 +59,30 @@
                   </Group>
               </Group>
               <EmptySpace min="17" pref="17" max="-2" attributes="0"/>
+=======
+              <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="formTitleLabel" alignment="0" max="32767" attributes="0"/>
+                  <Component id="basicInfoPanel" alignment="0" max="32767" attributes="0"/>
+                  <Component id="basicInfoLabel" alignment="0" max="32767" attributes="0"/>
+                  <Component id="descriptionLabel" alignment="0" max="32767" attributes="0"/>
+                  <Component id="descriptionPane" alignment="0" max="32767" attributes="0"/>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <Component id="clearButton" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="submitButton" min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="formIDLabel" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="idTextFields" min="-2" pref="101" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+>>>>>>> 9624a6969165480328bf4b89ec10f7b2bd1bbd83
           </Group>
       </Group>
     </DimensionLayout>
@@ -75,6 +100,7 @@
               <Component id="basicInfoLabel" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="basicInfoPanel" min="-2" max="-2" attributes="0"/>
+<<<<<<< HEAD
               <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -89,6 +115,18 @@
                   <Component id="submitButton" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="192" max="32767" attributes="0"/>
+=======
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="descriptionLabel" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="descriptionPane" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="submitButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="clearButton" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="92" max="32767" attributes="0"/>
+>>>>>>> 9624a6969165480328bf4b89ec10f7b2bd1bbd83
           </Group>
       </Group>
     </DimensionLayout>
@@ -189,7 +227,11 @@
     </Component>
     <Component class="javax.swing.JLabel" name="formIDLabel">
       <Properties>
+<<<<<<< HEAD
         <Property name="text" type="java.lang.String" value="Student ID:"/>
+=======
+        <Property name="text" type="java.lang.String" value="Form ID:"/>
+>>>>>>> 9624a6969165480328bf4b89ec10f7b2bd1bbd83
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="descriptionLabel">
@@ -224,11 +266,19 @@
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
+<<<<<<< HEAD
               <EmptySpace min="0" pref="137" max="32767" attributes="0"/>
               <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="descriptionScrollPane" pref="125" max="32767" attributes="0"/>
+=======
+              <EmptySpace min="0" pref="183" max="32767" attributes="0"/>
+              <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="descriptionScrollPane" pref="171" max="32767" attributes="0"/>
+>>>>>>> 9624a6969165480328bf4b89ec10f7b2bd1bbd83
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -274,6 +324,7 @@
         <Property name="editable" type="boolean" value="false"/>
       </Properties>
     </Component>
+<<<<<<< HEAD
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -316,5 +367,7 @@
         </Component>
       </SubComponents>
     </Container>
+=======
+>>>>>>> 9624a6969165480328bf4b89ec10f7b2bd1bbd83
   </SubComponents>
 </Form>

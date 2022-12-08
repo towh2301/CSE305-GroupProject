@@ -12,9 +12,15 @@ import javax.swing.JButton;
 import model.Hall;
 import model.Staff;
 import staff_view.CreateStaffAccount;
+<<<<<<< HEAD
 import view.LoginForm;
 import view.LoginForm;
 import view.LoginForm;
+=======
+import student_view.LoginForm;
+import student_view.LoginForm;
+import student_view.LoginForm;
+>>>>>>> 9624a6969165480328bf4b89ec10f7b2bd1bbd83
 
 /**
  *

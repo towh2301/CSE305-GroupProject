@@ -4,7 +4,10 @@
  */
 package student_view;
 
+<<<<<<< HEAD
 import view.LoginForm;
+=======
+>>>>>>> 9624a6969165480328bf4b89ec10f7b2bd1bbd83
 import controller.AccountInforMap;
 import controller.ExitOptionBackup;
 import model.MapStaffAndStudent;
