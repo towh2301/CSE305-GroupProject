@@ -1,8 +1,10 @@
 package model;
 
+import controller.Administrator;
+
 public class Student extends People{
     String major, room;
-    int seniority;
+    int seniority, genderIdx, majorIdx;
     
     public Student(String id, String firstName, String surName, String dateOfBirth, String gender, String email, String major, int seniority) {
         super(id, firstName, surName, dateOfBirth, gender, email);
@@ -35,10 +37,32 @@ public class Student extends People{
     }
     
     public void sendMessForm(Form form) {
-        GeneralSecretary.receiveFormMess(form);
+        Administrator.getListGeneralSecretarys().get(this.getHallName()-1).receiveFormMess(form);
     }
     
     public void sendMaintenanceForm(Form form) {
-        GeneralSecretary.receiveFormMaintenance(form);
+        Administrator.getListGeneralSecretarys().get(this.getHallName()-1).receiveFormMaintenance(form);
     }
+
+    public void setGenderIdx(int genderIdx) {
+        this.genderIdx = genderIdx;
+    }
+
+    public void setMajorIdx(int majorIdx) {
+        this.majorIdx = majorIdx;
+    }
+
+    public int getGenderIdx() {
+        return genderIdx;
+    }
+
+    public int getMajorIdx() {
+        return majorIdx;
+    }
+    
+    public int getHallName() {
+        return Integer.parseInt(this.room.substring(1, this.room.indexOf(".")));
+    }
+    
+    
 }

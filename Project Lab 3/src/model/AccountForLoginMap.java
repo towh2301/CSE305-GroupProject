@@ -9,10 +9,17 @@ public class AccountForLoginMap {
     public static HashMap<String, String> loginStaffMap = new HashMap<>();
 
     public AccountForLoginMap() {
-        loginStaffMap.put("Sadmin", "admin");
-        loginStaffMap.put("Cadmin", "admin");
+        loginStaffMap.put("SEadmin1", "admin");
+        loginStaffMap.put("SAadmin1", "admin");
+        loginStaffMap.put("Cadmin1", "admin");
         loginStaffMap.put("Madmin", "admin");
         loginStaffMap.put("Aadmin", "admin");
+        loginStaffMap.put("Hall1", "admin");
+        loginStaffMap.put("Hall2", "admin");
+        loginStaffMap.put("Hall3", "admin");
+        loginStaffMap.put("Hall4", "admin");
+        loginStaffMap.put("Hall5", "admin");
+        loginStaffMap.put("Hall6", "admin");
         loginStudentMap.put("1", "1");
     }
 //   static HashMap<String, Student> mapStaffAccount;

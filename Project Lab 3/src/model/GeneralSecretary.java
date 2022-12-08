@@ -1,5 +1,6 @@
 package model;
 
+import controller.Administrator;
 import model.AssistantWardenMess;
 import model.AssistantWardenMaintenance;
 import java.util.*;
@@ -8,41 +9,66 @@ import model.Staff;
 
 public class GeneralSecretary extends Staff {
 
-    static List<Form> listFormMess;
-    static List<Form> listFormMaintenance;
+    private List<Form> listFormMess;
+    private List<Form> listFormMaintenance;
+    int hallNumber;
 
-    public GeneralSecretary(String id, String firstName, String surName, String dateOfBirth, String gender, String email) {
+    public GeneralSecretary(int hallNumber, String id, String firstName, String surName, String dateOfBirth, String gender, String email) {
         super(id, firstName, surName, dateOfBirth, gender, email);
+        this.hallNumber = hallNumber;
+        this.listFormMess = new ArrayList<>();
+        this.listFormMaintenance = new ArrayList<>();
     }
 
-    public static void receiveFormMess(Form form) {
-        GeneralSecretary.listFormMess.add(form);
+    public int getHallNumber() {
+        return hallNumber;
     }
 
-    public static void receiveFormMaintenance(Form form) {
-        GeneralSecretary.listFormMaintenance.add(form);
+    public void setHallNumber(int hallNumber) {
+        this.hallNumber = hallNumber;
+    }
+    
+    
+
+    public List<Form> getListFormMess() {
+        return listFormMess;
     }
 
-    public static boolean reviseFormMess(Form form) {
-        GeneralSecretary.listFormMess.remove(form);
-        return true;
+    public void setListFormMess(List<Form> listFormMess) {
+        this.listFormMess = listFormMess;
     }
 
-    public static boolean reviseFormMaintenance(Form form) {
-        GeneralSecretary.listFormMaintenance.remove(form);
-        return true;
+    public List<Form> getListFormMaintenance() {
+        return listFormMaintenance;
     }
 
-    public static void forwardFormMess(Form form) {
-//        if (reviseFormMess(form)) {
-        AssistantWardenMess.receive(form);
-//        }
+    public void setListFormMaintenance(List<Form> listFormMaintenance) {
+        this.listFormMaintenance = listFormMaintenance;
+    }
+    
+
+    public void receiveFormMess(Form form) {
+        listFormMess.add(form);
     }
 
-    public static void forwardFormMaintenance(Form form) {
-//        if (reviseFormMaintenance(form)) {
-        AssistantWardenMaintenance.receive(form);
-//        }
+    public void receiveFormMaintenance(Form form) {
+        listFormMaintenance.add(form);
+    }
+
+    public void reviseFormMess(Form form) {
+        listFormMess.remove(form);
+    }
+
+    public void reviseFormMaintenance(Form form) {
+        listFormMaintenance.remove(form);
+    }
+
+    public void forwardFormMess(Form form) {
+        Administrator.getListMessAssistant().get(this.hallNumber-1).receive(form);
+    }
+
+    public void forwardFormMaintenance(Form form) {
+        Administrator.getListMaintenanceAssistant().get(this.hallNumber-1).receive(form);
     }
 
 }

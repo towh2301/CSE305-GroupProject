@@ -6,8 +6,11 @@ import controller.ExitOptionBackup;
 import java.util.*;
 import javax.swing.JOptionPane;
 import model.AccountForLoginMap;
-import staff_view.SecretaryHomePage;
+import staff_view.HallManagerView;
+import staff_view.MaintenanceSecretaryHomePage;
+import staff_view.MessSecretaryHomePage;
 import staff_view.WardenMess;
+import student_view.StudentHomePage;
 
 public class LoginForm extends javax.swing.JFrame {
 
@@ -19,7 +22,7 @@ public class LoginForm extends javax.swing.JFrame {
         this.setResizable(false);
         this.setLocationRelativeTo(null);
         ExitOptionBackup.exitOption(this);
-        
+
     }
 
     @SuppressWarnings("unchecked")
@@ -115,41 +118,59 @@ public class LoginForm extends javax.swing.JFrame {
 
     }//GEN-LAST:event_userNameTextFieldActionPerformed
 
-    public static String getUserName(){
+    public static String getUserName() {
         return userNameTextField.getText();
     }
-    
+
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
-        
-        
+
 //
         AccountForLoginMap login = new AccountForLoginMap();
         String username = LoginForm.userNameTextField.getText();
         String password = String.valueOf(this.passwordField.getPassword());
-        
 
         //S : Secretary
         //C : MessWarden
         //M : MaintenanceWarden
         //A : Administrator
         if (AccountForLoginMap.getStaffAccountMap().containsKey(username) && AccountForLoginMap.getStaffAccountMap().get(username).equals(password)) {
-            
+
             JOptionPane.showMessageDialog(this, "Login Successfully");
             this.dispose();
             String sign = String.valueOf(username.charAt(0));
-            switch(sign){
-                case "S" -> new SecretaryHomePage().setVisible(true);
-                case "C" -> new WardenMess().setVisible(true);
-                case "M" -> new WardenMaintenance().setVisible(true);
-                case "A" -> new AdministratorForm().setVisible(true);
+            
+            
+            
+            switch (sign) {
+                case "S" -> {
+                    String sec = "S" + String.valueOf(username.charAt(1));
+                    
+                    if(sec.equalsIgnoreCase("SA")){
+                        new MaintenanceSecretaryHomePage().setVisible(true);
+                    } else {
+                        new MessSecretaryHomePage(Integer.parseInt(String.valueOf(username.charAt(7)))).setVisible(true);
+                    }
+                    
+                }
+                case "C" ->
+                    new WardenMess(Integer.parseInt(String.valueOf(username.charAt(6)))).setVisible(true);
+                case "M" ->
+                    new WardenMaintenance().setVisible(true);
+                case "A" ->
+                    new AdministratorForm().setVisible(true);
+                case "H" -> {
+                    String hallName = String.valueOf(username.charAt(0)) + 
+                                      String.valueOf(username.charAt(4));
+                    new HallManagerView(hallName).setVisible(true);
+                }
             }
-                 
+
         } else {
-           
+
             if (AccountForLoginMap.getStudentAccountMap().containsKey(username) && AccountForLoginMap.getStudentAccountMap().get(username).equals(password)) {
                 JOptionPane.showMessageDialog(this, "Login Successfully");
                 this.setVisible(false);
-                new StudentHomePage().setVisible(true);            
+                new StudentHomePage().setVisible(true);
             } else {
                 JOptionPane.showMessageDialog(rootPane, "Pleas enter correct username and password!",
                         "Error", JOptionPane.ERROR_MESSAGE);
@@ -157,8 +178,7 @@ public class LoginForm extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_loginButtonActionPerformed
-    
-    
+
     /**
      * @param args the command line arguments
      */

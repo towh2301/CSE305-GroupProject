@@ -4,9 +4,12 @@ import controller.Administrator;
 import controller.BackupDataUtils;
 import controller.RestoreDataUtils;
 import java.io.File;
+import java.util.HashMap;
+import model.HallManager;
 import model.MapStaffAndStudent;
+import staff_view.AdministratorForm;
 import view.LoginForm;
-import staff_view.SecretaryHomePage;
+import staff_view.MaintenanceSecretaryHomePage;
 
 public class MVCProject {
     
@@ -15,8 +18,13 @@ public class MVCProject {
         loginForm.setVisible(true);
         
         //initialize staff
-        new SecretaryHomePage();
+        new MaintenanceSecretaryHomePage();
         new MapStaffAndStudent();
+        new AdministratorForm();
+        new Administrator();
+        
+        File file = new File("HallForCreateRoom.txt");                
+        RestoreDataUtils.restoreHallInfor(file);
         
         //restore all hall
         //nen de vo luc new Admin Page

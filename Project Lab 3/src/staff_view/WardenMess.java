@@ -4,12 +4,18 @@
  */
 package staff_view;
 
+import controller.AccountInforMap;
+import controller.Administrator;
+import controller.RestoreDataUtils;
 import java.awt.Component;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.File;
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 import javax.swing.table.DefaultTableModel;
+import model.AssistantWardenMess;
+import model.Form;
 import view.LoginForm;
 
 /**
@@ -21,13 +27,23 @@ public class WardenMess extends javax.swing.JFrame {
     /**
      * Creates new form StaffHomePage
      */
+    static DefaultTableModel model = new DefaultTableModel();
+    static AssistantWardenMess assistant;
     
-    public WardenMess() {
+    public WardenMess(int hallNumber) {
         initComponents();
         //this.setSize(400, 300);
         this.setResizable(false);
         this.setLocationRelativeTo(null);
         this.addListener();
+        
+        //
+        this.assistant = Administrator.getListMessAssistant().get(hallNumber-1);
+        
+        File file = new File("wardene" + hallNumber + ".txt");
+        assistant.setListForm(RestoreDataUtils.restoreFormListData(file));
+        addDataToTable();
+        
     }
 
     /**
@@ -49,6 +65,11 @@ public class WardenMess extends javax.swing.JFrame {
         staffMenu = new javax.swing.JMenu();
 
         removeMenuItem.setText("Remove");
+        removeMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                removeMenuItemActionPerformed(evt);
+            }
+        });
         popupMenu.add(removeMenuItem);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -72,7 +93,15 @@ public class WardenMess extends javax.swing.JFrame {
             new String [] {
                 "ID", "Room", "Name", "Content"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane2.setViewportView(messTable);
         if (messTable.getColumnModel().getColumnCount() > 0) {
             messTable.getColumnModel().getColumn(0).setResizable(false);
@@ -118,10 +147,19 @@ public class WardenMess extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    public static void addRowMessTable(Object[] object){
-        DefaultTableModel mess;
-        mess = (DefaultTableModel) messTable.getModel();
-        mess.addRow(object);
+    public static void addRowMessTable(Object[] object) {
+        WardenMess.model = (DefaultTableModel) messTable.getModel();
+        model.addRow(object);
+    }
+    
+    public static void addDataToTable(){
+        for(Form form : assistant.getListForm()){
+            String id = form.getStudentID();
+            String name = AccountInforMap.getName(id);
+            String room = AccountInforMap.getRoom(id);
+            Object[] object = new Object[]{form.getStudentID(), name, room, form.getSummary()};
+            addRowMessTable(object);
+        }
     }
     
     private void logoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutButtonActionPerformed
@@ -129,13 +167,19 @@ public class WardenMess extends javax.swing.JFrame {
         new LoginForm().setVisible(true);
     }//GEN-LAST:event_logoutButtonActionPerformed
 
+    private void removeMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeMenuItemActionPerformed
+        int row = messTable.getSelectedRow();
+        assistant.addressTheProblem(assistant.getListForm().get(row));
+        ((DefaultTableModel) messTable.getModel()).removeRow(row);
+    }//GEN-LAST:event_removeMenuItemActionPerformed
+
     
     private void addListener() {
         messTable.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 if (e.getClickCount() == 2) {
-                    doubleClickOnTable(messTable);
+                    doubleClickOnTable(messTable, assistant.getListForm().get(messTable.getSelectedRow()));
                 }
             }
         });
@@ -151,7 +195,7 @@ public class WardenMess extends javax.swing.JFrame {
         });
     }
 
-    private void doubleClickOnTable(Component evt) {
+    private void doubleClickOnTable(Component evt, Form form) {
         int row = messTable.getSelectedRow();
         StringBuilder sBuilder = new StringBuilder();
 
@@ -159,7 +203,7 @@ public class WardenMess extends javax.swing.JFrame {
             String id = (String) messTable.getValueAt(row, 0);
             String name = (String) messTable.getValueAt(row, 1);
             String room = (String) messTable.getValueAt(row, 2);
-            String des = (String) messTable.getValueAt(row, 3);
+            String des = form.getDescription();
             sBuilder.append("ID: ").append(id).append(", ").append("Name: ").append(name).
                     append(", Room: ").append(room).append("\n").append("Description: ").append(des);
         } catch (ArrayIndexOutOfBoundsException e) {
@@ -204,11 +248,11 @@ public class WardenMess extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new WardenMess().setVisible(true);
-            }
-        });
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                new WardenMess().setVisible(true);
+//            }
+//        });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

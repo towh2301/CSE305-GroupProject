@@ -114,6 +114,7 @@ public class RoomStatus extends javax.swing.JFrame {
        int row = roomStatusTable.getSelectedRow();
        String roomName = String.valueOf(roomStatusTable.getValueAt(row, 0));
        CreateStudentRoom.roomTextField.setText(roomName);
+       this.dispose();
     }//GEN-LAST:event_chooseRoomMenuItemActionPerformed
 
     public void showError() {
@@ -179,7 +180,7 @@ public class RoomStatus extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public static javax.swing.JMenuItem chooseRoomMenuItem;
+    public javax.swing.JMenuItem chooseRoomMenuItem;
     private javax.swing.JScrollPane jScrollPane1;
     private static javax.swing.JPopupMenu popupMenu;
     public static javax.swing.JTable roomStatusTable;

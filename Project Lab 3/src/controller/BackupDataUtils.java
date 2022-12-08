@@ -6,9 +6,11 @@ import java.util.logging.Logger;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import model.Form;
 import model.Room;
 import model.Hall;
+import model.HallManager;
 import model.MapStaffAndStudent;
 import model.Staff;
 import model.Student;
@@ -150,11 +152,11 @@ public class BackupDataUtils {
             fwr = new FileWriter(file, true);
             PrintWriter pwr = new PrintWriter(fwr);
             String id = form.getStudentID();
+            
             pwr.println(id);
-            pwr.println(AccountInforMap.getName(id));
-            pwr.println(AccountInforMap.getRoom(id));
             pwr.println(form.getSummary());
             pwr.println(form.getDescription());
+            
             pwr.flush();
         } catch (IOException ex) {
 
@@ -196,5 +198,30 @@ public class BackupDataUtils {
             backupForm(form, file);
         }
 
+    }
+
+    public static void backupHallForManager(File file) {
+        file.delete();
+        FileWriter fwr = null;
+        try {
+            fwr = new FileWriter(file, true);
+            PrintWriter pwr = new PrintWriter(fwr);
+
+            int numOfStudent = HallManager.MapStudentID.size();
+            pwr.println(numOfStudent);
+            for (Map.Entry<String, String> student : HallManager.MapStudentID.entrySet()) {
+                pwr.println(student.getKey());
+                pwr.println(student.getValue());
+            }
+            pwr.flush();
+        } catch (IOException ex) {
+
+        } finally {
+            try {
+                fwr.close();
+            } catch (IOException ex) {
+
+            }
+        }
     }
 }

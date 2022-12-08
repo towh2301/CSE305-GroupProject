@@ -11,6 +11,7 @@ import javax.swing.table.DefaultTableModel;
 import model.Student;
 import model.Hall;
 import model.MapStaffAndStudent;
+import static staff_view.HallManagerView.studentTable;
 import static view.RoomStatus.roomStatusTable;
 
 /**
@@ -20,13 +21,15 @@ import static view.RoomStatus.roomStatusTable;
 public class CreateStudentRoom extends javax.swing.JFrame {
 
     RoomStatus roomStatus = new RoomStatus();
+    int row;
 
-    public CreateStudentRoom(Student student, int genderIdx, int majorIdx, String hallName) {
+    public CreateStudentRoom(Student student, int genderIdx, int majorIdx, String hallName, int row) {
         initComponents();
         this.setResizable(false);
         this.setLocationRelativeTo(this);
         this.setTextField(student, genderIdx, majorIdx, hallName);
-        
+        this.row = row;
+
     }
 
     /**
@@ -231,29 +234,31 @@ public class CreateStudentRoom extends javax.swing.JFrame {
     private void createStudentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createStudentButtonActionPerformed
         String id = this.idTextField.getText();
         String roomName = roomTextField.getText();
-        if(!roomName.isBlank()){
+        if (!roomName.isBlank()) {
             JOptionPane.showMessageDialog(this, "Successfully!");
             MapStaffAndStudent.mapStudentAccount.get(id).setRoom(roomName);
+            DefaultTableModel table = (DefaultTableModel) studentTable.getModel();
+            table.removeRow(this.row);
             this.dispose();
-        }else{
-            JOptionPane.showMessageDialog(this, "Room is blank!"
-                              , "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(this, "Room is blank!",
+                     "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_createStudentButtonActionPerformed
 
     private void checkButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkButtonActionPerformed
-        
+
         //initialize Roomstatus
         ((DefaultTableModel) roomStatusTable.getModel()).setRowCount(0);
         RoomStatus.addListener();
         roomStatus.setVisible(true);
-        
+
         //hall for check room
         List<Hall> hallList = AdministratorForm.getHallList();
-        
+
         //
-        for(Hall hall : hallList){
-            if(hall.getHallName().equals(this.hallTextField.getText())){
+        for (Hall hall : hallList) {
+            if (hall.getHallName().equals(this.hallTextField.getText())) {
                 RoomStatus.createObject(hall.findVacantRoom());
             }
         }
@@ -286,9 +291,8 @@ public class CreateStudentRoom extends javax.swing.JFrame {
             }
         }
     }
-    
-    
-    public void setTextField(Student student, int genderIdx, int majorIdx, String hallName){
+
+    public void setTextField(Student student, int genderIdx, int majorIdx, String hallName) {
         this.idTextField.setText(student.getId());
         this.genderComboBox.setSelectedIndex(genderIdx);
         this.majorComboBox.setSelectedIndex(majorIdx);
@@ -300,9 +304,10 @@ public class CreateStudentRoom extends javax.swing.JFrame {
         this.seniorityTextField.setText(String.valueOf(student.getSeniority()));
     }
 
-    public void addRoomToTable(Hall hall){
-        
+    public void addRoomToTable(Hall hall) {
+
     }
+
     /**
      * @param args the command line arguments
      */
