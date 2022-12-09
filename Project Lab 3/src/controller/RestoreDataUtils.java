@@ -161,32 +161,32 @@ public class RestoreDataUtils {
         
     }
 
-    public static void restoreHallInfor(File file) {
-        FileReader frd;
-        HallManager.MapStudentID = new HashMap<>();
-        String id, hallName;
-
-        try {
-            frd = new FileReader(file);
-            BufferedReader brd = new BufferedReader(frd);
-
-            int studentNumber = Integer.parseInt(brd.readLine());
-
-            for (; studentNumber > 0; studentNumber--) {
-                id = brd.readLine();
-                hallName = brd.readLine();
-                HallManager.MapStudentID.put(id, hallName);
-            }
-
-            frd.close();
-        } catch (FileNotFoundException ex) {
-            //Logger.getLogger(RestoreDataUtils.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (NumberFormatException | IOException | NullPointerException ex) {
-            //Logger.getLogger(RestoreDataUtils.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//    public static void restoreHallInfor(File file) {
+//        FileReader frd;
+//        HallManager.MapStudentID = new HashMap<>();
+//       String id, hallName;
+//
+//      try {
+//            frd = new FileReader(file);
+//            BufferedReader brd = new BufferedReader(frd);
+//
+//            int studentNumber = Integer.parseInt(brd.readLine());
+//
+//            for (; studentNumber > 0; studentNumber--) {
+//                id = brd.readLine();
+//                hallName = brd.readLine();
+//                HallManager.MapStudentID.put(id, hallName);
+//            }
+//
+//            frd.close();
+//        } catch (FileNotFoundException ex) {
+//            //Logger.getLogger(RestoreDataUtils.class.getName()).log(Level.SEVERE, null, ex);
+//        } catch (NumberFormatException | IOException | NullPointerException ex) {
+//            //Logger.getLogger(RestoreDataUtils.class.getName()).log(Level.SEVERE, null, ex);
+//        }
         //
 
-    }
+//    }
 
 //    public static void restoreStaffData(File file) {
 //        FileReader frd;
