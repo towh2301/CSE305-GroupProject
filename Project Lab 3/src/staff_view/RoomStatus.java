@@ -59,11 +59,9 @@ public class RoomStatus extends javax.swing.JFrame {
     private void initComponents() {
 
         popupMenu = new javax.swing.JPopupMenu();
-<<<<<<< HEAD
         jScrollPane1 = new javax.swing.JScrollPane();
         roomStatusTable = new javax.swing.JTable();
 
-=======
         chooseRoomMenuItem = new javax.swing.JMenuItem();
         jScrollPane1 = new javax.swing.JScrollPane();
         roomStatusTable = new javax.swing.JTable();
@@ -76,7 +74,6 @@ public class RoomStatus extends javax.swing.JFrame {
         });
         popupMenu.add(chooseRoomMenuItem);
 
->>>>>>> 9624a6969165480328bf4b89ec10f7b2bd1bbd83
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         roomStatusTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -117,8 +114,6 @@ public class RoomStatus extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-<<<<<<< HEAD
-=======
     private void chooseRoomMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chooseRoomMenuItemActionPerformed
        int row = roomStatusTable.getSelectedRow();
        String roomName = String.valueOf(roomStatusTable.getValueAt(row, 0));
@@ -127,7 +122,6 @@ public class RoomStatus extends javax.swing.JFrame {
        this.dispose();
     }//GEN-LAST:event_chooseRoomMenuItemActionPerformed
 
->>>>>>> 9624a6969165480328bf4b89ec10f7b2bd1bbd83
     public void showError() {
         JOptionPane.showMessageDialog(this, "Room is full",
                 "Error", JOptionPane.ERROR_MESSAGE);
@@ -191,10 +185,7 @@ public class RoomStatus extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-<<<<<<< HEAD
-=======
     public javax.swing.JMenuItem chooseRoomMenuItem;
->>>>>>> 9624a6969165480328bf4b89ec10f7b2bd1bbd83
     private javax.swing.JScrollPane jScrollPane1;
     private static javax.swing.JPopupMenu popupMenu;
     public static javax.swing.JTable roomStatusTable;
