@@ -5,10 +5,7 @@ import java.io.File;
 import java.util.List;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-<<<<<<< HEAD
 import model.Form;
-=======
->>>>>>> 9624a6969165480328bf4b89ec10f7b2bd1bbd83
 import model.HallManager;
 import static model.MapStaffAndStudent.mapStaffAccount;
 import static model.MapStaffAndStudent.mapStudentAccount;
@@ -36,11 +33,6 @@ public class ExitOptionBackup {
                     if(!HallManager.MapStudentID.isEmpty()){
                         BackupDataUtils.backupHallForManager(hallInfor);
                     }
-<<<<<<< HEAD
-                                                       
-=======
-                    
->>>>>>> 9624a6969165480328bf4b89ec10f7b2bd1bbd83
                     System.exit(0);
                 }
                 frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
