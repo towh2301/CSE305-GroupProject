@@ -7,18 +7,14 @@ import java.util.Map;
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 import javax.swing.table.DefaultTableModel;
-<<<<<<< HEAD
 import model.GuestModel;
 import model.HallManager;
 import model.MapStaffAndStudent;
 import model.Student;
 import view.LoginForm;
-=======
 import model.HallManager;
 import model.MapStaffAndStudent;
 import model.Student;
-import student_view.LoginForm;
->>>>>>> 9624a6969165480328bf4b89ec10f7b2bd1bbd83
 
 public class HallManagerView extends javax.swing.JFrame {
 
@@ -26,7 +22,6 @@ public class HallManagerView extends javax.swing.JFrame {
     
     public HallManagerView(String hallName) {
         initComponents();
-<<<<<<< HEAD
         
         //setting for main frame
         this.setResizable(false);
@@ -43,14 +38,12 @@ public class HallManagerView extends javax.swing.JFrame {
         this.viewStudentFrame.setSize(555, 380);
         this.viewStudentFrame.setResizable(false);
         this.viewStudentFrame.setLocationRelativeTo(null);
-=======
         //this.setSize(400, 300);
         this.setResizable(false);
         this.setLocationRelativeTo(null);
         this.addListener();
         HallManagerView.hallName = hallName;    
         addRowHallManagerTable();
->>>>>>> 9624a6969165480328bf4b89ec10f7b2bd1bbd83
     }
 
     /**
@@ -64,7 +57,6 @@ public class HallManagerView extends javax.swing.JFrame {
 
         popupMenu = new javax.swing.JPopupMenu();
         removeMenuItem = new javax.swing.JMenuItem();
-<<<<<<< HEAD
         viewStudentFrame = new javax.swing.JFrame();
         jScrollPane1 = new javax.swing.JScrollPane();
         studentTable = new javax.swing.JTable();
@@ -79,20 +71,16 @@ public class HallManagerView extends javax.swing.JFrame {
         staffMenu = new javax.swing.JMenu();
         viewBenchMenuItem = new javax.swing.JMenuItem();
         viewBookingGuestMenuItem = new javax.swing.JMenuItem();
-=======
         jLabel1 = new javax.swing.JLabel();
         logoutButton = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         studentTable = new javax.swing.JTable();
         jMenuBar1 = new javax.swing.JMenuBar();
         staffMenu = new javax.swing.JMenu();
->>>>>>> 9624a6969165480328bf4b89ec10f7b2bd1bbd83
 
         removeMenuItem.setText("Remove");
         popupMenu.add(removeMenuItem);
 
-<<<<<<< HEAD
-=======
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
@@ -107,7 +95,6 @@ public class HallManagerView extends javax.swing.JFrame {
             }
         });
 
->>>>>>> 9624a6969165480328bf4b89ec10f7b2bd1bbd83
         studentTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -140,7 +127,6 @@ public class HallManagerView extends javax.swing.JFrame {
             studentTable.getColumnModel().getColumn(1).setPreferredWidth(100);
         }
 
-<<<<<<< HEAD
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Hall Bench");
@@ -251,9 +237,7 @@ public class HallManagerView extends javax.swing.JFrame {
         });
         staffMenu.add(viewBookingGuestMenuItem);
 
-=======
         staffMenu.setText("View");
->>>>>>> 9624a6969165480328bf4b89ec10f7b2bd1bbd83
         jMenuBar1.add(staffMenu);
         staffMenu.getAccessibleContext().setAccessibleName("Form");
 
@@ -263,38 +247,31 @@ public class HallManagerView extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-<<<<<<< HEAD
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(logoutButton)
                 .addContainerGap())
             .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 321, Short.MAX_VALUE)
-=======
             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 599, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap(521, Short.MAX_VALUE)
                 .addComponent(logoutButton)
                 .addContainerGap())
             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
->>>>>>> 9624a6969165480328bf4b89ec10f7b2bd1bbd83
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-<<<<<<< HEAD
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 150, Short.MAX_VALUE)
                 .addComponent(logoutButton)
                 .addContainerGap())
-=======
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 309, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(23, 23, 23)
                 .addComponent(logoutButton)
-                .addContainerGap(61, Short.MAX_VALUE))
->>>>>>> 9624a6969165480328bf4b89ec10f7b2bd1bbd83
-        );
+                .addContainerGap(61, Short.MAX_VALUE))        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -322,7 +299,6 @@ public class HallManagerView extends javax.swing.JFrame {
         new LoginForm().setVisible(true);
     }//GEN-LAST:event_logoutButtonActionPerformed
 
-<<<<<<< HEAD
     private void viewBenchMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewBenchMenuItemActionPerformed
         this.viewStudentFrame.setVisible(true);
     }//GEN-LAST:event_viewBenchMenuItemActionPerformed
@@ -330,9 +306,6 @@ public class HallManagerView extends javax.swing.JFrame {
     private void viewBookingGuestMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewBookingGuestMenuItemActionPerformed
         viewGuestForm.setVisible(true);
     }//GEN-LAST:event_viewBookingGuestMenuItemActionPerformed
-
-=======
->>>>>>> 9624a6969165480328bf4b89ec10f7b2bd1bbd83
     
     private void addListener() {
         studentTable.addMouseListener(new MouseAdapter() {
@@ -418,28 +391,22 @@ public class HallManagerView extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
-<<<<<<< HEAD
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-=======
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JScrollPane jScrollPane1;
->>>>>>> 9624a6969165480328bf4b89ec10f7b2bd1bbd83
     private javax.swing.JButton logoutButton;
     private javax.swing.JPopupMenu popupMenu;
     private javax.swing.JMenuItem removeMenuItem;
     private javax.swing.JMenu staffMenu;
     public static javax.swing.JTable studentTable;
-<<<<<<< HEAD
     public static javax.swing.JTable studentTable1;
     private javax.swing.JMenuItem viewBenchMenuItem;
     private static javax.swing.JMenuItem viewBookingGuestMenuItem;
     private javax.swing.JFrame viewGuestForm;
     private javax.swing.JFrame viewStudentFrame;
-=======
->>>>>>> 9624a6969165480328bf4b89ec10f7b2bd1bbd83
     // End of variables declaration//GEN-END:variables
 }
